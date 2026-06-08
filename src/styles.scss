@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-orange: #F97316;
+  --color-dark: #1A1A1A;
+  --color-light: #FAFAFA;
+  --color-slate: #334155;
+  --color-bg: var(--color-light);
+  --color-text: var(--color-dark);
+}
+
+.dark {
+  --color-bg: var(--color-dark);
+  --color-text: var(--color-light);
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, sans-serif;
+}

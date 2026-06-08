@@ -46,6 +46,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/demo-hydraulik/",
               "budgets": [
                 {
                   "type": "initial",
