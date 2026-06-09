@@ -52,7 +52,10 @@ interface NavLink {
               <a [routerLink]="link.path"
                  routerLinkActive="text-orange-500 font-semibold"
                  [routerLinkActiveOptions]="{ exact: link.path === '/' }"
-                 class="text-sm hover:text-orange-500 transition-colors duration-200 py-1">
+                 class="text-sm hover:text-orange-500 transition-colors duration-200 py-1"
+                 [class.text-white]="!scrolled()"
+                 [class.text-gray-800]="scrolled() && !isDark()"
+                 [class.text-gray-100]="scrolled() && isDark()">
                 {{ link.label }}
               </a>
             </li>

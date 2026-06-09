@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 const FOOTER_TEXT = 'Projekt demonstracyjny wykonany przez Konrada Malinowskiego';
-const GITHUB_URL = 'https://github.com/KonradMalinowski/demo-hydraulik';
+const GITHUB_URL = 'https://github.com/konradxmalinowski/demo-hydraulik';
 const PORTFOLIO_URL = 'https://konradmalinowski.pl';
 
 @Component({

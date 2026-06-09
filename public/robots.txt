@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://KonradMalinowski.github.io/demo-hydraulik/sitemap.xml
+Sitemap: https://konradxmalinowski.github.io/demo-hydraulik/sitemap.xml
