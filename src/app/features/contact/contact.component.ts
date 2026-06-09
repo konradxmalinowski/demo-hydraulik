@@ -87,7 +87,9 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
 
             @if (submitted()) {
               <div class="text-center py-8">
-                <div class="text-5xl mb-4" aria-hidden="true">✅</div>
+                <div class="text-5xl mb-4" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto w-16 h-16 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                </div>
                 <h3 class="text-xl font-bold mb-2">Wiadomość wysłana!</h3>
                 <p class="text-gray-600 dark:text-gray-400">Odezwiemy się najszybciej jak to możliwe.</p>
                 <button (click)="resetForm()"
@@ -240,7 +242,9 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
               <div class="space-y-4">
                 <a href="tel:+48123456789"
                    class="flex items-center gap-4 p-4 rounded-xl bg-orange-50 dark:bg-orange-900/20 hover:bg-orange-100 dark:hover:bg-orange-900/30 transition-colors group">
-                  <div class="text-2xl" aria-hidden="true">📞</div>
+                  <div class="text-2xl" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.95.68l1.06 3.18a1 1 0 01-.23 1.05l-1.4 1.4a16.06 16.06 0 006.29 6.29l1.4-1.4a1 1 0 011.05-.23l3.18 1.06A1 1 0 0121 16.72V19a2 2 0 01-2 2h-1C9.16 21 3 14.84 3 7V5z"/></svg>
+                  </div>
                   <div>
                     <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide font-medium">Telefon (24/7)</p>
                     <p class="font-bold text-lg text-orange-600 dark:text-orange-400 group-hover:underline">+48 123 456 789</p>
@@ -249,7 +253,9 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
 
                 <a href="mailto:kontakt@hydrofix-krakow.pl"
                    class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
-                  <div class="text-2xl" aria-hidden="true">✉️</div>
+                  <div class="text-2xl" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                  </div>
                   <div>
                     <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide font-medium">E-mail</p>
                     <p class="font-semibold group-hover:text-orange-500 transition-colors">kontakt&#64;hydrofix-krakow.pl</p>
@@ -257,7 +263,9 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
                 </a>
 
                 <div class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 dark:bg-gray-800">
-                  <div class="text-2xl" aria-hidden="true">📍</div>
+                  <div class="text-2xl" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  </div>
                   <div>
                     <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide font-medium">Adres</p>
                     <p class="font-semibold">ul. Wodna 12, 30-001 Kraków</p>

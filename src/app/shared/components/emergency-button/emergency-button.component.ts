@@ -55,7 +55,6 @@ import { DemoModeService } from '../../../core/services/demo-mode.service';
         type="button"
         aria-label="Zgłoś awarię hydrauliczną"
       >
-        <span class="text-2xl" aria-hidden="true">🚨</span>
         <span>{{ label }}</span>
       </button>
     } @else if (variant === 'sticky') {
@@ -67,7 +66,6 @@ import { DemoModeService } from '../../../core/services/demo-mode.service';
           type="button"
           aria-label="Zgłoś awarię hydrauliczną"
         >
-          <span class="text-xl animate-bounce" aria-hidden="true">🚨</span>
           <span>{{ label }}</span>
         </button>
       </div>
@@ -80,7 +78,6 @@ import { DemoModeService } from '../../../core/services/demo-mode.service';
           type="button"
           aria-label="Zgłoś awarię hydrauliczną"
         >
-          <span class="text-3xl" aria-hidden="true">🚨</span>
           <span>{{ label }}</span>
         </button>
       </div>

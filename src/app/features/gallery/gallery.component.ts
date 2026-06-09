@@ -58,7 +58,6 @@ import { GALLERY_ITEMS, GALLERY_CATEGORIES, GalleryCategory } from '../../data/g
 
         @if (filteredItems().length === 0) {
           <div class="text-center py-16">
-            <span class="text-5xl" aria-hidden="true">🔍</span>
             <p class="text-gray-600 dark:text-gray-400 mt-4">Brak realizacji w tej kategorii</p>
           </div>
         }

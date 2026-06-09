@@ -35,11 +35,10 @@ import { FAQ_ITEMS, FAQ_CATEGORIES, FaqCategory } from '../../data/faq.data';
 
         <!-- Search -->
         <div class="relative mb-8">
-          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl" aria-hidden="true">🔍</span>
           <input [formControl]="searchControl"
                  type="search"
                  placeholder="Szukaj pytania..."
-                 class="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500 text-base"
+                 class="w-full pl-4 pr-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500 text-base"
                  aria-label="Wyszukaj pytanie" />
         </div>
 
@@ -58,7 +57,6 @@ import { FAQ_ITEMS, FAQ_CATEGORIES, FaqCategory } from '../../data/faq.data';
         <!-- FAQ accordion grouped by category -->
         @if (filteredItems().length === 0) {
           <div class="text-center py-12 text-gray-500">
-            <span class="text-4xl block mb-3" aria-hidden="true">🔍</span>
             Nie znaleziono pytań pasujących do wyszukiwania.
           </div>
         } @else {
@@ -100,7 +98,6 @@ import { FAQ_ITEMS, FAQ_CATEGORIES, FaqCategory } from '../../data/faq.data';
           <h3 class="font-bold text-lg mb-2">Nie znalazłeś odpowiedzi?</h3>
           <p class="text-gray-600 dark:text-gray-400 mb-4">Skontaktuj się z nami bezpośrednio — odpiszemy w ciągu godziny.</p>
           <a href="tel:+48123456789" class="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors">
-            <span aria-hidden="true">📞</span>
             +48 123 456 789
           </a>
         </div>

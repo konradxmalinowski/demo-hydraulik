@@ -82,7 +82,6 @@ import { FAQ_ITEMS } from '../../data/faq.data';
 
           <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up animate-delay-3">
             <a routerLink="/kalkulator" class="inline-flex items-center justify-center gap-2 bg-white text-gray-900 px-6 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors">
-              <span aria-hidden="true">🔧</span>
               Zamów usługę
             </a>
             <app-emergency-button label="Zgłoś awarię" variant="inline" />
@@ -111,7 +110,6 @@ import { FAQ_ITEMS } from '../../data/faq.data';
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6" #trustGrid data-trust-section>
           @for (tile of trustTiles; track tile.icon) {
             <div class="trust-tile text-center p-6 rounded-2xl bg-gray-50 dark:bg-gray-800" [class.visible]="trustVisible()">
-              <div class="text-4xl mb-3">{{ tile.icon }}</div>
               <div class="font-bold text-lg text-orange-500 mb-1">{{ tile.value }}</div>
               <div class="text-sm text-gray-600 dark:text-gray-400">{{ tile.label }}</div>
             </div>
@@ -131,7 +129,6 @@ import { FAQ_ITEMS } from '../../data/faq.data';
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           @for (svc of services; track svc.id) {
             <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow group">
-              <div class="text-4xl mb-4">{{ svc.icon }}</div>
               <h3 class="font-bold text-lg mb-2 group-hover:text-orange-500 transition-colors">{{ svc.name }}</h3>
               <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">{{ svc.description }}</p>
               <a routerLink="/kontakt" class="text-orange-500 font-medium text-sm hover:underline">
@@ -302,7 +299,6 @@ import { FAQ_ITEMS } from '../../data/faq.data';
             @for (i of [1, 2, 3]; track i) {
               <div class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <div class="aspect-video bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
-                  <span class="text-4xl" aria-hidden="true">🔧</span>
                 </div>
                 <div class="p-4">
                   <div class="text-sm font-semibold text-gray-900 dark:text-white">Realizacja {{ i }}</div>
@@ -345,7 +341,6 @@ import { FAQ_ITEMS } from '../../data/faq.data';
         <p class="text-xl text-orange-100 mb-8">Nie czekaj — każda chwila może kosztować więcej. Zadzwoń lub wyślij zgłoszenie online.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="tel:+48123456789" class="inline-flex items-center justify-center gap-2 bg-white text-orange-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-50 transition-colors">
-            <span aria-hidden="true">📞</span>
             +48 123 456 789
           </a>
           <a routerLink="/kontakt" class="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors">
@@ -375,10 +370,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ];
 
   readonly trustTiles = [
-    { icon: '🏆', value: '15+ lat', label: 'doświadczenia' },
-    { icon: '🕐', value: '24/7', label: 'pogotowie hydrauliczne' },
-    { icon: '✅', value: '500+', label: 'zrealizowanych zleceń' },
-    { icon: '🛡️', value: '2 lata', label: 'gwarancji na prace' },
+    { icon: '', value: '15+ lat', label: 'doświadczenia' },
+    { icon: '', value: '24/7', label: 'pogotowie hydrauliczne' },
+    { icon: '', value: '500+', label: 'zrealizowanych zleceń' },
+    { icon: '', value: '2 lata', label: 'gwarancji na prace' },
   ];
 
   readonly serviceCities = [

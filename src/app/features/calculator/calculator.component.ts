@@ -53,7 +53,6 @@ type Step = 1 | 2 | 3;
                 <div class="grid grid-cols-2 gap-3 mb-6">
                   @for (opt of serviceOptions; track opt.value) {
                     <button (click)="setServiceType(opt.value)" class="flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all text-left" [class.border-orange-500]="calc.serviceType() === opt.value" [class.bg-orange-50]="calc.serviceType() === opt.value" [class.border-gray-200]="calc.serviceType() !== opt.value" [attr.aria-pressed]="calc.serviceType() === opt.value">
-                      <span class="text-2xl">{{ opt.icon }}</span>
                       <span class="font-semibold text-sm">{{ opt.label }}</span>
                     </button>
                   }
@@ -197,10 +196,10 @@ export class CalculatorComponent implements OnInit {
   });
 
   readonly serviceOptions: { value: ServiceType; label: string; icon: string }[] = [
-    { value: 'awaria', label: 'Naprawa awarii', icon: '🚨' },
-    { value: 'montaz', label: 'Montaż armatury', icon: '🔧' },
-    { value: 'wymiana', label: 'Wymiana elementów', icon: '🔄' },
-    { value: 'instalacja', label: 'Nowa instalacja', icon: '🏗️' },
+    { value: 'awaria', label: 'Naprawa awarii', icon: '' },
+    { value: 'montaz', label: 'Montaż armatury', icon: '' },
+    { value: 'wymiana', label: 'Wymiana elementów', icon: '' },
+    { value: 'instalacja', label: 'Nowa instalacja', icon: '' },
   ];
 
   ngOnInit(): void {

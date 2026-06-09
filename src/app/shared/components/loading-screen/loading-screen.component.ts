@@ -48,7 +48,6 @@ import { animate, style, transition, trigger } from '@angular/animations';
       >
         <div [@logoEnter] class="flex flex-col items-center gap-6">
           <div class="flex flex-col items-center gap-2">
-            <span class="text-6xl" aria-hidden="true">🔧</span>
             <span class="text-3xl font-bold text-orange-500">HydroFix</span>
             <span class="text-gray-500 dark:text-gray-400 text-sm font-medium tracking-wider uppercase">24/7 Pogotowie Hydrauliczne</span>
           </div>

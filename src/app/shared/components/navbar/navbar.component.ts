@@ -67,9 +67,9 @@ interface NavLink {
                   class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                   [attr.aria-label]="isDark() ? 'Tryb jasny' : 'Tryb ciemny'">
             @if (isDark()) {
-              <span aria-hidden="true" class="text-lg leading-none">☀</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-9h-1M4.34 12h-1m15.07-6.07-.71.71M6.34 17.66l-.71.71m12.02 0-.71-.71M6.34 6.34l-.71-.71M12 5a7 7 0 100 14A7 7 0 0012 5z"/></svg>
             } @else {
-              <span aria-hidden="true" class="text-lg leading-none">🌙</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
             }
           </button>
 
@@ -84,7 +84,7 @@ interface NavLink {
                   aria-controls="mobile-menu"
                   aria-label="Menu nawigacyjne">
             @if (mobileOpen()) {
-              <span class="block w-6 text-center" aria-hidden="true">✕</span>
+              <span class="block w-6 text-center" aria-hidden="true">×</span>
             } @else {
               <span class="flex flex-col gap-1" aria-hidden="true">
                 <span class="block w-6 h-0.5 bg-current"></span>
@@ -115,7 +115,7 @@ interface NavLink {
           <button (click)="closeMobileMenu()"
                   class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
                   aria-label="Zamknij menu">
-            <span aria-hidden="true" class="text-xl">✕</span>
+            <span aria-hidden="true" class="text-xl">×</span>
           </button>
         </div>
 
