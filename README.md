@@ -1,59 +1,59 @@
-# DemoHydraulik
+# Demo: Hydraulik
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.27.
+Działające demo strony dla hydraulika / pogotowia hydraulicznego — zbudowane w Angular + TypeScript z Angular Signals i SSR.
 
-## Development server
+Część portfolio [Konrad Malinowski](https://malinowski.dev) — pokazuje, jak może wyglądać strona Twojej firmy.
 
-To start a local development server, run:
+**Live demo:** https://konradxmalinowski.github.io/demo-hydraulik/
+
+---
+
+## Co pokazuje to demo
+
+- Przycisk awarii z animacją pulsu — numer telefonu widoczny natychmiast
+- Kalkulator wyceny usługi krok po kroku
+- Galeria realizacji z suwakiem before/after
+- Mapa obszaru działania
+- Tryb 24/7 — pełne pogotowie hydrauliczne
+- Core Web Vitals zoptymalizowane (SSR + lazy loading)
+
+## Stack
+
+- **Angular 19** + TypeScript
+- **Angular Signals** — reaktywny stan bez BehaviorSubject
+- **SSR (Server-Side Rendering)** — lepsza indeksacja i LCP
+- **Tailwind CSS** — stylowanie
+- **Angular CLI** — build i serwowanie
+
+## Uruchomienie lokalne
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Aplikacja będzie dostępna pod http://localhost:4200
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## Budowanie produkcyjne
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Pliki wyjściowe znajdą się w katalogu `dist/`.
 
-## Running unit tests
+## Struktura
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+```
+src/
+├── app/
+│   ├── components/     # Komponenty UI
+│   ├── pages/          # Widoki (Home, Services, Gallery, Contact)
+│   └── services/       # Logika kalkulatora i obszaru działania
+└── assets/
 ```
 
-## Running end-to-end tests
+## Zainteresowany podobną stroną?
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Napisz: [malinowski.konrad45@gmail.com](mailto:malinowski.konrad45@gmail.com)  
+Portfolio: [malinowski.dev](https://malinowski.dev)
