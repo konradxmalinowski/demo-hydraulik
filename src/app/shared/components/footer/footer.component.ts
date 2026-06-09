@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 const FOOTER_TEXT = 'Projekt demonstracyjny wykonany przez Konrada Malinowskiego';
 const GITHUB_URL = 'https://github.com/konradxmalinowski/demo-hydraulik';
-const PORTFOLIO_URL = 'https://konradmalinowski.pl';
+const PORTFOLIO_URL = 'http://konrad.malinowski.ct8.pl';
 
 @Component({
   selector: 'app-footer',
