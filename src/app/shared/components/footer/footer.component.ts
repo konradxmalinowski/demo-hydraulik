@@ -21,7 +21,7 @@ const PORTFOLIO_URL = 'http://konrad.malinowski.ct8.pl';
             [href]="githubUrl"
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:text-orange-400 transition-colors underline"
+            class="hover:text-blue-400 transition-colors underline"
           >
             GitHub
           </a>
@@ -29,7 +29,7 @@ const PORTFOLIO_URL = 'http://konrad.malinowski.ct8.pl';
             [href]="portfolioUrl"
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:text-orange-400 transition-colors underline"
+            class="hover:text-blue-400 transition-colors underline"
           >
             Portfolio
           </a>

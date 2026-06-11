@@ -35,8 +35,8 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
       box-sizing: border-box;
     }
     .input-base:focus {
-      border-color: #f97316;
-      box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+      border-color: #3B82F6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
     }
     .input-error {
       border-color: #ef4444;
@@ -60,10 +60,10 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
       color: #f9fafb;
     }
     :host-context(.dark) .input-base:focus {
-      border-color: #f97316;
+      border-color: #3B82F6;
     }
     .today-highlight {
-      background: #f97316;
+      background: #1E3A5F;
       color: white;
       border-radius: 6px;
       font-weight: 700;
@@ -93,7 +93,7 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
                 <h3 class="text-xl font-bold mb-2">Wiadomość wysłana!</h3>
                 <p class="text-gray-600 dark:text-gray-400">Odezwiemy się najszybciej jak to możliwe.</p>
                 <button (click)="resetForm()"
-                        class="mt-6 text-orange-500 font-medium hover:underline">
+                        class="mt-6 text-blue-500 font-medium hover:underline">
                   Wyślij kolejną wiadomość
                 </button>
               </div>
@@ -102,7 +102,7 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
 
                 <!-- Name -->
                 <div class="form-field">
-                  <label for="name" class="label">Imię i nazwisko <span class="text-orange-500">*</span></label>
+                  <label for="name" class="label">Imię i nazwisko <span class="text-blue-500">*</span></label>
                   <input id="name"
                          type="text"
                          formControlName="name"
@@ -120,7 +120,7 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
 
                 <!-- Phone -->
                 <div class="form-field">
-                  <label for="phone" class="label">Telefon <span class="text-orange-500">*</span></label>
+                  <label for="phone" class="label">Telefon <span class="text-blue-500">*</span></label>
                   <input id="phone"
                          type="tel"
                          formControlName="phone"
@@ -156,7 +156,7 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
 
                 <!-- Service type -->
                 <div class="form-field">
-                  <label for="serviceType" class="label">Rodzaj usługi <span class="text-orange-500">*</span></label>
+                  <label for="serviceType" class="label">Rodzaj usługi <span class="text-blue-500">*</span></label>
                   <select id="serviceType"
                           formControlName="serviceType"
                           class="input-base"
@@ -179,7 +179,7 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
 
                 <!-- Message -->
                 <div class="form-field">
-                  <label for="message" class="label">Opis problemu <span class="text-orange-500">*</span></label>
+                  <label for="message" class="label">Opis problemu <span class="text-blue-500">*</span></label>
                   <textarea id="message"
                             formControlName="message"
                             class="input-base"
@@ -200,11 +200,11 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
                   <input id="consent"
                          type="checkbox"
                          formControlName="consent"
-                         class="mt-1 w-4 h-4 accent-orange-500 flex-shrink-0"
+                         class="mt-1 w-4 h-4 accent-blue-500 flex-shrink-0"
                          aria-describedby="consent-error" />
                   <div>
                     <label for="consent" class="text-sm text-gray-600 dark:text-gray-400 cursor-pointer">
-                      Wyrażam zgodę na przetwarzanie danych osobowych w celu realizacji zapytania. <span class="text-orange-500">*</span>
+                      Wyrażam zgodę na przetwarzanie danych osobowych w celu realizacji zapytania. <span class="text-blue-500">*</span>
                     </label>
                     @if (isInvalid('consent')) {
                       <span id="consent-error" class="error-msg block" role="alert">
@@ -216,7 +216,7 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
 
                 <!-- Submit -->
                 <button type="submit"
-                        class="w-full py-4 rounded-full bg-orange-500 text-white font-bold text-lg hover:bg-orange-600 active:bg-orange-700 transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        class="w-full py-4 rounded-full bg-[#1E3A5F] text-white font-bold text-lg hover:bg-[#163059] active:bg-[#0F2444] transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-300 disabled:opacity-50 disabled:cursor-not-allowed"
                         [disabled]="submitting()">
                   @if (submitting()) {
                     <span>Wysyłanie...</span>
@@ -241,13 +241,13 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
 
               <div class="space-y-4">
                 <a href="tel:+48123456789"
-                   class="flex items-center gap-4 p-4 rounded-xl bg-orange-50 dark:bg-orange-900/20 hover:bg-orange-100 dark:hover:bg-orange-900/30 transition-colors group">
+                   class="flex items-center gap-4 p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors group">
                   <div class="text-2xl" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.95.68l1.06 3.18a1 1 0 01-.23 1.05l-1.4 1.4a16.06 16.06 0 006.29 6.29l1.4-1.4a1 1 0 011.05-.23l3.18 1.06A1 1 0 0121 16.72V19a2 2 0 01-2 2h-1C9.16 21 3 14.84 3 7V5z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.95.68l1.06 3.18a1 1 0 01-.23 1.05l-1.4 1.4a16.06 16.06 0 006.29 6.29l1.4-1.4a1 1 0 011.05-.23l3.18 1.06A1 1 0 0121 16.72V19a2 2 0 01-2 2h-1C9.16 21 3 14.84 3 7V5z"/></svg>
                   </div>
                   <div>
                     <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide font-medium">Telefon (24/7)</p>
-                    <p class="font-bold text-lg text-orange-600 dark:text-orange-400 group-hover:underline">+48 123 456 789</p>
+                    <p class="font-bold text-lg text-[#1E3A5F] dark:text-blue-400 group-hover:underline">+48 123 456 789</p>
                   </div>
                 </a>
 
@@ -258,7 +258,7 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
                   </div>
                   <div>
                     <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide font-medium">E-mail</p>
-                    <p class="font-semibold group-hover:text-orange-500 transition-colors">kontakt&#64;hydrofix-krakow.pl</p>
+                    <p class="font-semibold group-hover:text-blue-500 transition-colors">kontakt&#64;hydrofix-krakow.pl</p>
                   </div>
                 </a>
 
@@ -286,8 +286,8 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
                   </div>
                 }
               </div>
-              <div class="mt-4 p-3 bg-orange-50 dark:bg-orange-900/20 rounded-xl">
-                <p class="text-orange-700 dark:text-orange-300 text-sm font-medium text-center">
+              <div class="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+                <p class="text-[#1E3A5F] dark:text-blue-300 text-sm font-medium text-center">
                   Pogotowie hydrauliczne — dostępne 24/7 przez cały rok
                 </p>
               </div>
@@ -308,7 +308,7 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
                 <p class="text-sm text-gray-600 dark:text-gray-400">ul. Wodna 12, 30-001 Kraków</p>
                 <a href="https://www.openstreetmap.org/?mlat=50.0647&mlon=19.9450#map=15/50.0647/19.9450"
                    target="_blank" rel="noopener noreferrer"
-                   class="text-orange-500 text-sm hover:underline font-medium">
+                   class="text-blue-500 text-sm hover:underline font-medium">
                   Otwórz w mapach →
                 </a>
               </div>

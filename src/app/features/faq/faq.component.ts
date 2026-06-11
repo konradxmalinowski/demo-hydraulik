@@ -38,17 +38,17 @@ import { FAQ_ITEMS, FAQ_CATEGORIES, FaqCategory } from '../../data/faq.data';
           <input [formControl]="searchControl"
                  type="search"
                  placeholder="Szukaj pytania..."
-                 class="w-full pl-4 pr-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500 text-base"
+                 class="w-full pl-4 pr-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
                  aria-label="Wyszukaj pytanie" />
         </div>
 
         <!-- Category tabs -->
         <div class="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filtruj pytania według kategorii">
-          <button (click)="setCategory(null)" class="px-4 py-2 rounded-full text-sm font-medium transition-colors" [class.bg-orange-500]="!activeCategory()" [class.text-white]="!activeCategory()" [class.bg-white]="activeCategory() !== null" [class.dark:bg-gray-800]="activeCategory() !== null" [class.text-gray-700]="activeCategory() !== null" [attr.aria-pressed]="!activeCategory()">
+          <button (click)="setCategory(null)" class="px-4 py-2 rounded-full text-sm font-medium transition-colors" [class.bg-[#1E3A5F]]="!activeCategory()" [class.text-white]="!activeCategory()" [class.bg-white]="activeCategory() !== null" [class.dark:bg-gray-800]="activeCategory() !== null" [class.text-gray-700]="activeCategory() !== null" [attr.aria-pressed]="!activeCategory()">
             Wszystkie
           </button>
           @for (cat of categories; track cat) {
-            <button (click)="setCategory(cat)" class="px-4 py-2 rounded-full text-sm font-medium transition-colors" [class.bg-orange-500]="activeCategory() === cat" [class.text-white]="activeCategory() === cat" [class.bg-white]="activeCategory() !== cat" [class.dark:bg-gray-800]="activeCategory() !== cat" [class.text-gray-700]="activeCategory() !== cat" [attr.aria-pressed]="activeCategory() === cat">
+            <button (click)="setCategory(cat)" class="px-4 py-2 rounded-full text-sm font-medium transition-colors" [class.bg-[#1E3A5F]]="activeCategory() === cat" [class.text-white]="activeCategory() === cat" [class.bg-white]="activeCategory() !== cat" [class.dark:bg-gray-800]="activeCategory() !== cat" [class.text-gray-700]="activeCategory() !== cat" [attr.aria-pressed]="activeCategory() === cat">
               {{ cat }}
             </button>
           }
@@ -62,8 +62,8 @@ import { FAQ_ITEMS, FAQ_CATEGORIES, FaqCategory } from '../../data/faq.data';
         } @else {
           @for (group of groupedItems(); track group.category) {
             <div class="mb-8">
-              <h2 class="text-lg font-bold text-orange-500 mb-3 flex items-center gap-2">
-                <span class="w-px h-5 bg-orange-500" aria-hidden="true"></span>
+              <h2 class="text-lg font-bold text-[#1E3A5F] dark:text-blue-400 mb-3 flex items-center gap-2">
+                <span class="w-px h-5 bg-[#3B82F6]" aria-hidden="true"></span>
                 {{ group.category }}
               </h2>
 
@@ -75,7 +75,7 @@ import { FAQ_ITEMS, FAQ_CATEGORIES, FaqCategory } from '../../data/faq.data';
                             [attr.aria-expanded]="isOpen(item.id)"
                             [attr.aria-controls]="'faq-answer-' + item.id">
                       <span class="pr-4">{{ item.question }}</span>
-                      <span class="flex-shrink-0 text-orange-500 text-xl transition-transform" [class.rotate-45]="isOpen(item.id)" aria-hidden="true">+</span>
+                      <span class="flex-shrink-0 text-blue-500 text-xl transition-transform" [class.rotate-45]="isOpen(item.id)" aria-hidden="true">+</span>
                     </button>
 
                     <div [id]="'faq-answer-' + item.id"
@@ -94,10 +94,10 @@ import { FAQ_ITEMS, FAQ_CATEGORIES, FaqCategory } from '../../data/faq.data';
         }
 
         <!-- CTA -->
-        <div class="mt-12 p-6 bg-orange-50 dark:bg-orange-900/20 rounded-2xl border border-orange-200 dark:border-orange-800 text-center">
+        <div class="mt-12 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border border-blue-200 dark:border-blue-800 text-center">
           <h3 class="font-bold text-lg mb-2">Nie znalazłeś odpowiedzi?</h3>
           <p class="text-gray-600 dark:text-gray-400 mb-4">Skontaktuj się z nami bezpośrednio — odpiszemy w ciągu godziny.</p>
-          <a href="tel:+48123456789" class="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors">
+          <a href="tel:+48123456789" class="inline-flex items-center gap-2 bg-[#1E3A5F] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#163059] transition-colors">
             +48 123 456 789
           </a>
         </div>

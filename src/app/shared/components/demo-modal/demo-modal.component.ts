@@ -61,7 +61,7 @@ const DEMO_TEXT =
           </p>
           <button
             (click)="demoModeService.close()"
-            class="mt-2 px-6 py-2 bg-orange-500 text-white rounded-lg font-medium hover:opacity-90 transition-opacity self-end"
+            class="mt-2 px-6 py-2 bg-[#1E3A5F] text-white rounded-lg font-medium hover:bg-[#163059] transition-colors self-end"
           >
             Zamknij
           </button>

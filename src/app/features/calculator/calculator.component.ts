@@ -30,11 +30,11 @@ type Step = 1 | 2 | 3;
         <div class="flex items-center justify-center gap-2 mb-10" aria-label="Postęp formularza">
           @for (s of [1, 2, 3]; track s) {
             <div class="flex items-center gap-2">
-              <div class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-colors" [class.bg-orange-500]="step() >= s" [class.text-white]="step() >= s" [class.bg-gray-200]="step() < s" [class.text-gray-500]="step() < s">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-colors" [class.bg-[#1E3A5F]]="step() >= s" [class.text-white]="step() >= s" [class.bg-gray-200]="step() < s" [class.text-gray-500]="step() < s">
                 {{ s }}
               </div>
               @if (s < 3) {
-                <div class="w-12 h-0.5 transition-colors" [class.bg-orange-500]="step() > s" [class.bg-gray-200]="step() <= s"></div>
+                <div class="w-12 h-0.5 transition-colors" [class.bg-[#3B82F6]]="step() > s" [class.bg-gray-200]="step() <= s"></div>
               }
             </div>
           }
@@ -52,7 +52,7 @@ type Step = 1 | 2 | 3;
 
                 <div class="grid grid-cols-2 gap-3 mb-6">
                   @for (opt of serviceOptions; track opt.value) {
-                    <button (click)="setServiceType(opt.value)" class="flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all text-left" [class.border-orange-500]="calc.serviceType() === opt.value" [class.bg-orange-50]="calc.serviceType() === opt.value" [class.border-gray-200]="calc.serviceType() !== opt.value" [attr.aria-pressed]="calc.serviceType() === opt.value">
+                    <button (click)="setServiceType(opt.value)" class="flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all text-left" [class.border-[#3B82F6]]="calc.serviceType() === opt.value" [class.bg-blue-50]="calc.serviceType() === opt.value" [class.border-gray-200]="calc.serviceType() !== opt.value" [attr.aria-pressed]="calc.serviceType() === opt.value">
                       <span class="font-semibold text-sm">{{ opt.label }}</span>
                     </button>
                   }
@@ -64,12 +64,12 @@ type Step = 1 | 2 | 3;
                     <p class="font-medium">Pilna interwencja</p>
                     <p class="text-sm text-gray-500">Przyjazd do 45 minut (+50 zł)</p>
                   </div>
-                  <button (click)="calc.urgent.set(!calc.urgent())" role="switch" [attr.aria-checked]="calc.urgent()" class="relative w-12 h-6 rounded-full transition-colors" [class.bg-orange-500]="calc.urgent()" [class.bg-gray-300]="!calc.urgent()">
+                  <button (click)="calc.urgent.set(!calc.urgent())" role="switch" [attr.aria-checked]="calc.urgent()" class="relative w-12 h-6 rounded-full transition-colors" [class.bg-[#1E3A5F]]="calc.urgent()" [class.bg-gray-300]="!calc.urgent()">
                     <span class="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform" [class.translate-x-6]="calc.urgent()"></span>
                   </button>
                 </div>
 
-                <button (click)="goStep(2)" class="w-full bg-orange-500 text-white py-3 rounded-xl font-semibold hover:bg-orange-600 transition-colors">
+                <button (click)="goStep(2)" class="w-full bg-[#1E3A5F] text-white py-3 rounded-xl font-semibold hover:bg-[#163059] transition-colors">
                   Dalej
                 </button>
               </div>
@@ -84,9 +84,9 @@ type Step = 1 | 2 | 3;
                 <!-- Hours slider -->
                 <div class="mb-6">
                   <label class="block text-sm font-medium mb-2" for="hours-slider">
-                    Szacowany czas pracy: <span class="text-orange-500 font-bold">{{ calc.hoursCount() }} godz.</span>
+                    Szacowany czas pracy: <span class="text-blue-500 font-bold">{{ calc.hoursCount() }} godz.</span>
                   </label>
-                  <input id="hours-slider" type="range" min="1" max="8" step="1" [value]="calc.hoursCount()" (input)="setHours($event)" class="w-full accent-orange-500" />
+                  <input id="hours-slider" type="range" min="1" max="8" step="1" [value]="calc.hoursCount()" (input)="setHours($event)" class="w-full accent-blue-500" />
                   <div class="flex justify-between text-xs text-gray-400 mt-1">
                     <span>1h</span><span>4h</span><span>8h</span>
                   </div>
@@ -98,7 +98,7 @@ type Step = 1 | 2 | 3;
                     <p class="font-medium">Materiały instalacyjne</p>
                     <p class="text-sm text-gray-500">Rury, złączki, uszczelki (+100 zł)</p>
                   </div>
-                  <button (click)="calc.extraMaterials.set(!calc.extraMaterials())" role="switch" [attr.aria-checked]="calc.extraMaterials()" class="relative w-12 h-6 rounded-full transition-colors" [class.bg-orange-500]="calc.extraMaterials()" [class.bg-gray-300]="!calc.extraMaterials()">
+                  <button (click)="calc.extraMaterials.set(!calc.extraMaterials())" role="switch" [attr.aria-checked]="calc.extraMaterials()" class="relative w-12 h-6 rounded-full transition-colors" [class.bg-[#1E3A5F]]="calc.extraMaterials()" [class.bg-gray-300]="!calc.extraMaterials()">
                     <span class="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform" [class.translate-x-6]="calc.extraMaterials()"></span>
                   </button>
                 </div>
@@ -107,7 +107,7 @@ type Step = 1 | 2 | 3;
                   <button (click)="goStep(1)" class="flex-1 border border-gray-300 dark:border-gray-600 py-3 rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
                     Wstecz
                   </button>
-                  <button (click)="goStep(3)" class="flex-1 bg-orange-500 text-white py-3 rounded-xl font-semibold hover:bg-orange-600 transition-colors">
+                  <button (click)="goStep(3)" class="flex-1 bg-[#1E3A5F] text-white py-3 rounded-xl font-semibold hover:bg-[#163059] transition-colors">
                     Dalej
                   </button>
                 </div>
@@ -123,14 +123,14 @@ type Step = 1 | 2 | 3;
                 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
                   <div>
                     <label class="block text-sm font-medium mb-1" for="calc-name">Imię *</label>
-                    <input id="calc-name" formControlName="name" type="text" class="w-full border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Jan" />
+                    <input id="calc-name" formControlName="name" type="text" class="w-full border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Jan" />
                     @if (contactForm.get('name')?.invalid && contactForm.get('name')?.touched) {
                       <p class="text-red-500 text-xs mt-1">Imię jest wymagane</p>
                     }
                   </div>
                   <div>
                     <label class="block text-sm font-medium mb-1" for="calc-phone">Telefon *</label>
-                    <input id="calc-phone" formControlName="phone" type="tel" class="w-full border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="+48 xxx xxx xxx" />
+                    <input id="calc-phone" formControlName="phone" type="tel" class="w-full border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="+48 xxx xxx xxx" />
                     @if (contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched) {
                       <p class="text-red-500 text-xs mt-1">Podaj prawidłowy numer telefonu</p>
                     }
@@ -140,7 +140,7 @@ type Step = 1 | 2 | 3;
                     <button type="button" (click)="goStep(2)" class="flex-1 border border-gray-300 dark:border-gray-600 py-3 rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
                       Wstecz
                     </button>
-                    <button type="submit" class="flex-1 bg-orange-500 text-white py-3 rounded-xl font-semibold hover:bg-orange-600 transition-colors">
+                    <button type="submit" class="flex-1 bg-[#1E3A5F] text-white py-3 rounded-xl font-semibold hover:bg-[#163059] transition-colors">
                       Wyślij zapytanie
                     </button>
                   </div>
@@ -165,14 +165,14 @@ type Step = 1 | 2 | 3;
             <div class="mt-6 pt-6 border-t border-gray-600">
               <div class="flex items-center justify-between">
                 <span class="text-gray-300 font-semibold text-lg">RAZEM</span>
-                <span class="text-3xl font-bold text-orange-400 tabular-nums">{{ calc.razem() }} zł</span>
+                <span class="text-3xl font-bold text-blue-400 tabular-nums">{{ calc.razem() }} zł</span>
               </div>
               <p class="text-gray-500 text-xs mt-2 text-center">* Wycena orientacyjna. Ostateczna cena po oględzinach.</p>
             </div>
 
             <div class="mt-4 text-center">
               <span class="inline-flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-full text-xs text-gray-300">
-                <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+                <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
                 {{ currentServiceLabel() }}
               </span>
             </div>
