@@ -1,0 +1,29 @@
+# Demo: Plumber (Hydraulik)
+
+> A demo website for a plumber / 24-7 emergency plumbing service, built by freelance
+> web developer Konrad Malinowski as part of his portfolio. Angular 19 with Signals
+> and server-side rendering — it shows prospective clients what their own trade-service
+> website could look like.
+
+The site content is in Polish. All data is mock data; the price calculator and
+service-area map run entirely client-side with no backend.
+
+## Features
+
+- Emergency call button with pulse animation — phone number visible immediately
+- Step-by-step service price calculator
+- Project gallery with before/after slider
+- Service-area map and full 24/7 emergency mode
+- Core Web Vitals optimized (SSR + lazy loading)
+
+## Tech
+
+- Angular 19, TypeScript, Angular Signals
+- Server-Side Rendering (@angular/ssr + Express)
+- Tailwind CSS
+
+## Links
+
+- [Source code](https://github.com/konradxmalinowski/demo-hydraulik): GitHub repository
+- [Developer portfolio](http://konrad.malinowski.ct8.pl): Konrad Malinowski — freelance web developer
+- [Contact](mailto:malinowski.konrad45@gmail.com): get a similar website for your business
