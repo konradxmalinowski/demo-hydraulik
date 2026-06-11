@@ -52,7 +52,7 @@ type Step = 1 | 2 | 3;
 
                 <div class="grid grid-cols-2 gap-3 mb-6">
                   @for (opt of serviceOptions; track opt.value) {
-                    <button (click)="setServiceType(opt.value)" class="flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all text-left" [class.border-[#3B82F6]]="calc.serviceType() === opt.value" [class.bg-blue-50]="calc.serviceType() === opt.value" [class.border-gray-200]="calc.serviceType() !== opt.value" [attr.aria-pressed]="calc.serviceType() === opt.value">
+                    <button (click)="setServiceType(opt.value)" class="flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all text-left" [class.border-[#3B82F6]]="calc.serviceType() === opt.value" [class.bg-blue-50]="calc.serviceType() === opt.value" [class.text-[#1E3A5F]]="calc.serviceType() === opt.value" [class.border-gray-200]="calc.serviceType() !== opt.value" [attr.aria-pressed]="calc.serviceType() === opt.value">
                       <span class="font-semibold text-sm">{{ opt.label }}</span>
                     </button>
                   }

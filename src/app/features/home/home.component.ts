@@ -58,10 +58,6 @@ import { FAQ_ITEMS } from '../../data/faq.data';
   template: `
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center bg-gradient-to-br from-[#0F172A] via-[#1E3A5F] to-[#0F172A] text-white overflow-hidden">
-      <!-- Background pattern -->
-      <div class="absolute inset-0 opacity-10" aria-hidden="true"
-           style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;)"></div>
-
       <div class="relative max-w-6xl mx-auto px-4 py-24 grid md:grid-cols-2 gap-12 items-center">
         <div>
           <!-- Dyżur badge -->
@@ -98,9 +94,6 @@ import { FAQ_ITEMS } from '../../data/faq.data';
           }
         </div>
       </div>
-
-      <!-- Emergency sticky bar (mobile only) -->
-      <app-emergency-button label="Zgłoś awarię — przyjedziemy w 35 min" variant="sticky" />
     </section>
 
     <!-- Trust tiles section (with scroll animations) -->

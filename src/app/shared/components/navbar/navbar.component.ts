@@ -153,7 +153,6 @@ export class NavbarComponent {
 
   readonly navLinks: NavLink[] = [
     { label: 'Start', path: '/' },
-    { label: 'Usługi', path: '/uslugi' },
     { label: 'Kalkulator', path: '/kalkulator' },
     { label: 'Realizacje', path: '/galeria' },
     { label: 'FAQ', path: '/faq' },
