@@ -57,7 +57,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
   `],
   template: `
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-orange-900 text-white overflow-hidden">
+    <section class="relative min-h-screen flex items-center bg-gradient-to-br from-[#0F172A] via-[#1E3A5F] to-[#0F172A] text-white overflow-hidden">
       <!-- Background pattern -->
       <div class="absolute inset-0 opacity-10" aria-hidden="true"
            style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;)"></div>
@@ -65,14 +65,14 @@ import { FAQ_ITEMS } from '../../data/faq.data';
       <div class="relative max-w-6xl mx-auto px-4 py-24 grid md:grid-cols-2 gap-12 items-center">
         <div>
           <!-- Dyżur badge -->
-          <div class="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-500/40 text-orange-300 px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in-up">
-            <span class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span>
+          <div class="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-500/40 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in-up">
+            <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
             Dyżur aktywny — dojazd ok. {{ arrivalTime() }} min (demo)
           </div>
 
           <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up animate-delay-1">
             Hydraulik<br />
-            <span class="text-orange-400">na ratunek</span><br />
+            <span class="text-blue-400">na ratunek</span><br />
             24/7
           </h1>
 
@@ -92,7 +92,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
         <div class="grid grid-cols-2 gap-4 animate-fade-in-up animate-delay-4">
           @for (stat of heroStats; track stat.value) {
             <div class="bg-white/10 backdrop-blur rounded-2xl p-6 text-center">
-              <div class="text-4xl font-extrabold text-orange-400">{{ stat.value }}</div>
+              <div class="text-4xl font-extrabold text-blue-400">{{ stat.value }}</div>
               <div class="text-sm text-gray-300 mt-1">{{ stat.label }}</div>
             </div>
           }
@@ -110,7 +110,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6" #trustGrid data-trust-section>
           @for (tile of trustTiles; track tile.icon) {
             <div class="trust-tile text-center p-6 rounded-2xl bg-gray-50 dark:bg-gray-800" [class.visible]="trustVisible()">
-              <div class="font-bold text-lg text-orange-500 mb-1">{{ tile.value }}</div>
+              <div class="font-bold text-lg text-blue-500 mb-1">{{ tile.value }}</div>
               <div class="text-sm text-gray-600 dark:text-gray-400">{{ tile.label }}</div>
             </div>
           }
@@ -129,9 +129,9 @@ import { FAQ_ITEMS } from '../../data/faq.data';
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           @for (svc of services; track svc.id) {
             <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow group">
-              <h3 class="font-bold text-lg mb-2 group-hover:text-orange-500 transition-colors">{{ svc.name }}</h3>
+              <h3 class="font-bold text-lg mb-2 group-hover:text-blue-500 transition-colors">{{ svc.name }}</h3>
               <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">{{ svc.description }}</p>
-              <a routerLink="/kontakt" class="text-orange-500 font-medium text-sm hover:underline">
+              <a routerLink="/kontakt" class="text-blue-500 font-medium text-sm hover:underline">
                 Zamów usługę →
               </a>
             </div>
@@ -159,7 +159,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
                 </div>
                 <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4 italic">"{{ t.text }}"</p>
                 <div class="flex items-center gap-2">
-                  <div class="w-8 h-8 rounded-full bg-orange-100 dark:bg-orange-900 flex items-center justify-center text-orange-600 dark:text-orange-400 font-bold text-sm">
+                  <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-sm">
                     {{ t.name.charAt(0) }}
                   </div>
                   <div>
@@ -215,13 +215,13 @@ import { FAQ_ITEMS } from '../../data/faq.data';
               <ul class="grid grid-cols-2 gap-2">
                 @for (city of serviceCities; track city) {
                   <li class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-                    <span class="text-orange-500">✓</span>
+                    <span class="text-blue-500">✓</span>
                     {{ city }}
                   </li>
                 }
               </ul>
-              <div class="mt-6 p-4 bg-orange-50 dark:bg-orange-900/20 rounded-xl border border-orange-200 dark:border-orange-800">
-                <p class="text-orange-800 dark:text-orange-300 text-sm font-medium">
+              <div class="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
+                <p class="text-blue-800 dark:text-blue-300 text-sm font-medium">
                   Poza obszarem? Zadzwoń — często możemy dojechać dalej.
                 </p>
               </div>
@@ -264,7 +264,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
           </div>
 
           <div class="text-center mt-8">
-            <a routerLink="/faq" class="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors">
+            <a routerLink="/faq" class="inline-flex items-center gap-2 bg-[#1E3A5F] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#163059] transition-colors">
               Wszystkie pytania →
             </a>
           </div>
@@ -309,7 +309,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
           </div>
 
           <div class="text-center mt-8">
-            <a routerLink="/galeria" class="inline-flex items-center gap-2 border border-orange-500 text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-orange-50 dark:hover:bg-orange-900/10 transition-colors">
+            <a routerLink="/galeria" class="inline-flex items-center gap-2 border border-[#3B82F6] text-[#3B82F6] px-6 py-3 rounded-full font-semibold hover:bg-blue-50 dark:hover:bg-blue-900/10 transition-colors">
               Zobacz wszystkie realizacje →
             </a>
           </div>
@@ -335,12 +335,12 @@ import { FAQ_ITEMS } from '../../data/faq.data';
     }
 
     <!-- CTA Section -->
-    <section class="py-20 px-4 bg-orange-500 text-white">
+    <section class="py-20 px-4 bg-[#1E3A5F] text-white">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-extrabold mb-4">Masz awarię? Działamy 24/7!</h2>
-        <p class="text-xl text-orange-100 mb-8">Nie czekaj — każda chwila może kosztować więcej. Zadzwoń lub wyślij zgłoszenie online.</p>
+        <p class="text-xl text-blue-100 mb-8">Nie czekaj — każda chwila może kosztować więcej. Zadzwoń lub wyślij zgłoszenie online.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="tel:+48123456789" class="inline-flex items-center justify-center gap-2 bg-white text-orange-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-50 transition-colors">
+          <a href="tel:+48123456789" class="inline-flex items-center justify-center gap-2 bg-white text-[#1E3A5F] px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-colors">
             +48 123 456 789
           </a>
           <a routerLink="/kontakt" class="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors">

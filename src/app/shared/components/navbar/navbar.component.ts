@@ -42,7 +42,7 @@ interface NavLink {
          aria-label="Główna nawigacja">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <a routerLink="/" class="flex items-center gap-2 font-bold text-xl">
-          <span class="text-orange-500">HydroFix</span>
+          <span class="text-blue-500">HydroFix</span>
           <span class="text-sm font-normal opacity-70">24/7</span>
         </a>
 
@@ -50,9 +50,9 @@ interface NavLink {
           @for (link of navLinks; track link.path) {
             <li>
               <a [routerLink]="link.path"
-                 routerLinkActive="text-orange-500 font-semibold"
+                 routerLinkActive="text-blue-500 font-semibold"
                  [routerLinkActiveOptions]="{ exact: link.path === '/' }"
-                 class="text-sm hover:text-orange-500 transition-colors duration-200 py-1"
+                 class="text-sm hover:text-blue-500 transition-colors duration-200 py-1"
                  [class.text-white]="!scrolled()"
                  [class.text-gray-800]="scrolled() && !isDark()"
                  [class.text-gray-100]="scrolled() && isDark()">
@@ -74,7 +74,7 @@ interface NavLink {
           </button>
 
           <a routerLink="/kontakt"
-             class="hidden md:inline-flex items-center gap-1 bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-orange-600 transition-colors">
+             class="hidden md:inline-flex items-center gap-1 bg-[#1E3A5F] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[#163059] transition-colors">
             Zgłoś awarię
           </a>
 
@@ -111,7 +111,7 @@ interface NavLink {
            [class.bg-gray-900]="isDark()"
            [@drawerSlide]>
         <div class="flex items-center justify-between px-4 h-16 border-b border-gray-200 dark:border-gray-700">
-          <span class="font-bold text-orange-500">Menu</span>
+          <span class="font-bold text-blue-500">Menu</span>
           <button (click)="closeMobileMenu()"
                   class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
                   aria-label="Zamknij menu">
@@ -124,7 +124,7 @@ interface NavLink {
             <li>
               <a [routerLink]="link.path"
                  (click)="closeMobileMenu()"
-                 routerLinkActive="bg-orange-50 text-orange-600 dark:bg-orange-900/20 dark:text-orange-400"
+                 routerLinkActive="bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400"
                  [routerLinkActiveOptions]="{ exact: link.path === '/' }"
                  class="flex items-center px-4 py-3 rounded-lg text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
                 {{ link.label }}
@@ -136,7 +136,7 @@ interface NavLink {
         <div class="p-4 border-t border-gray-200 dark:border-gray-700">
           <a routerLink="/kontakt"
              (click)="closeMobileMenu()"
-             class="flex items-center justify-center gap-2 w-full bg-orange-500 text-white px-4 py-3 rounded-full font-medium hover:bg-orange-600 transition-colors">
+             class="flex items-center justify-center gap-2 w-full bg-[#1E3A5F] text-white px-4 py-3 rounded-full font-medium hover:bg-[#163059] transition-colors">
             Zgłoś awarię
           </a>
         </div>

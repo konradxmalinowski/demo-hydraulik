@@ -48,14 +48,14 @@ import { animate, style, transition, trigger } from '@angular/animations';
       >
         <div [@logoEnter] class="flex flex-col items-center gap-6">
           <div class="flex flex-col items-center gap-2">
-            <span class="text-3xl font-bold text-orange-500">HydroFix</span>
+            <span class="text-3xl font-bold text-blue-500">HydroFix</span>
             <span class="text-gray-500 dark:text-gray-400 text-sm font-medium tracking-wider uppercase">24/7 Pogotowie Hydrauliczne</span>
           </div>
 
           <div class="flex gap-2 mt-4" aria-hidden="true">
-            <span class="loading-dot w-3 h-3 rounded-full bg-orange-500"></span>
-            <span class="loading-dot w-3 h-3 rounded-full bg-orange-500"></span>
-            <span class="loading-dot w-3 h-3 rounded-full bg-orange-500"></span>
+            <span class="loading-dot w-3 h-3 rounded-full bg-blue-500"></span>
+            <span class="loading-dot w-3 h-3 rounded-full bg-blue-500"></span>
+            <span class="loading-dot w-3 h-3 rounded-full bg-blue-500"></span>
           </div>
         </div>
       </div>
