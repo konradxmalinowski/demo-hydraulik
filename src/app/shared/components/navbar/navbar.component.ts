@@ -7,7 +7,8 @@ import {
   PLATFORM_ID,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 interface NavLink {
@@ -53,9 +54,9 @@ interface NavLink {
                  routerLinkActive="text-blue-500 font-semibold"
                  [routerLinkActiveOptions]="{ exact: link.path === '/' }"
                  class="text-sm hover:text-blue-500 transition-colors duration-200 py-1"
-                 [class.text-white]="!scrolled()"
-                 [class.text-gray-800]="scrolled() && !isDark()"
-                 [class.text-gray-100]="scrolled() && isDark()">
+                 [class.text-white]="!scrolled() && isHome()"
+                 [class.text-gray-800]="(scrolled() || !isHome()) && !isDark()"
+                 [class.text-gray-100]="(scrolled() || !isHome()) && isDark()">
                 {{ link.label }}
               </a>
             </li>
@@ -146,10 +147,13 @@ interface NavLink {
 })
 export class NavbarComponent {
   private readonly platformId = inject(PLATFORM_ID);
+  private readonly router = inject(Router);
 
   readonly scrolled = signal(false);
   readonly mobileOpen = signal(false);
   readonly isDark = signal(false);
+  /** Only the home page has a dark hero behind the transparent navbar */
+  readonly isHome = signal(true);
 
   readonly navLinks: NavLink[] = [
     { label: 'Start', path: '/' },
@@ -160,6 +164,13 @@ export class NavbarComponent {
   ];
 
   constructor() {
+    this.isHome.set(this.isHomeUrl(this.router.url));
+    this.router.events.pipe(takeUntilDestroyed()).subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.isHome.set(this.isHomeUrl(event.urlAfterRedirects));
+      }
+    });
+
     if (isPlatformBrowser(this.platformId)) {
       const saved = localStorage.getItem('hydraulik-dark-mode');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -198,6 +209,10 @@ export class NavbarComponent {
     if (isPlatformBrowser(this.platformId)) {
       document.body.style.overflow = '';
     }
+  }
+
+  private isHomeUrl(url: string): boolean {
+    return url.split('?')[0].split('#')[0] === '/';
   }
 
   private applyDarkMode(dark: boolean): void {
