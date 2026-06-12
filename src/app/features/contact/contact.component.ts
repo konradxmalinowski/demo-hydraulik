@@ -361,6 +361,7 @@ export class ContactComponent implements OnInit {
     // Demo mode — no real network request (T-03-H1 mitigation)
     setTimeout(() => {
       this.submitting.set(false);
+      this.submitted.set(true);
       this.demoMode.open();
     }, 600);
   }
