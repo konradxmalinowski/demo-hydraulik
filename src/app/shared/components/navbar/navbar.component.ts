@@ -75,7 +75,7 @@ interface NavLink {
           </button>
 
           <a routerLink="/kontakt"
-             class="hidden md:inline-flex items-center gap-1 bg-[#1E3A5F] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[#163059] transition-colors">
+             class="hidden md:inline-flex items-center gap-1 bg-hydraulik-navy text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-hydraulik-navy-dark transition-colors">
             Zgłoś awarię
           </a>
 
@@ -137,7 +137,7 @@ interface NavLink {
         <div class="p-4 border-t border-gray-200 dark:border-gray-700">
           <a routerLink="/kontakt"
              (click)="closeMobileMenu()"
-             class="flex items-center justify-center gap-2 w-full bg-[#1E3A5F] text-white px-4 py-3 rounded-full font-medium hover:bg-[#163059] transition-colors">
+             class="flex items-center justify-center gap-2 w-full bg-hydraulik-navy text-white px-4 py-3 rounded-full font-medium hover:bg-hydraulik-navy-dark transition-colors">
             Zgłoś awarię
           </a>
         </div>

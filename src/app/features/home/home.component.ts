@@ -57,7 +57,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
   `],
   template: `
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center bg-gradient-to-br from-[#0F172A] via-[#1E3A5F] to-[#0F172A] text-white overflow-hidden">
+    <section class="relative min-h-screen flex items-center bg-gradient-to-br from-hydraulik-ink via-hydraulik-navy to-hydraulik-ink text-white overflow-hidden">
       <div class="relative max-w-6xl mx-auto px-4 py-24 grid md:grid-cols-2 gap-12 items-center">
         <div>
           <!-- Dyżur badge -->
@@ -257,7 +257,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
           </div>
 
           <div class="text-center mt-8">
-            <a routerLink="/faq" class="inline-flex items-center gap-2 bg-[#1E3A5F] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#163059] transition-colors">
+            <a routerLink="/faq" class="inline-flex items-center gap-2 bg-hydraulik-navy text-white px-6 py-3 rounded-full font-semibold hover:bg-hydraulik-navy-dark transition-colors">
               Wszystkie pytania →
             </a>
           </div>
@@ -302,7 +302,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
           </div>
 
           <div class="text-center mt-8">
-            <a routerLink="/galeria" class="inline-flex items-center gap-2 border border-[#3B82F6] text-[#3B82F6] px-6 py-3 rounded-full font-semibold hover:bg-blue-50 dark:hover:bg-blue-900/10 transition-colors">
+            <a routerLink="/galeria" class="inline-flex items-center gap-2 border border-hydraulik-steel text-hydraulik-steel px-6 py-3 rounded-full font-semibold hover:bg-blue-50 dark:hover:bg-blue-900/10 transition-colors">
               Zobacz wszystkie realizacje →
             </a>
           </div>
@@ -328,12 +328,12 @@ import { FAQ_ITEMS } from '../../data/faq.data';
     }
 
     <!-- CTA Section -->
-    <section class="py-20 px-4 bg-[#1E3A5F] text-white">
+    <section class="py-20 px-4 bg-hydraulik-navy text-white">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-extrabold mb-4">Masz awarię? Działamy 24/7!</h2>
         <p class="text-xl text-blue-100 mb-8">Nie czekaj — każda chwila może kosztować więcej. Zadzwoń lub wyślij zgłoszenie online.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="tel:+48123456789" class="inline-flex items-center justify-center gap-2 bg-white text-[#1E3A5F] px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-colors">
+          <a href="tel:+48123456789" class="inline-flex items-center justify-center gap-2 bg-white text-hydraulik-navy px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-colors">
             +48 123 456 789
           </a>
           <a routerLink="/kontakt" class="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors">

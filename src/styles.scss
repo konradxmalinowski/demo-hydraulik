@@ -10,15 +10,10 @@
   --color-bg: var(--color-light);
   --color-text: var(--color-dark);
 
-  /* HydroFix navy/steel palette tokens (Plan 04) */
-  --hydro-primary: #1E3A5F;        /* deep navy — backgrounds, section headers */
-  --hydro-accent: #3B82F6;         /* steel blue — CTAs, links, active states */
-  --hydro-surface-light: #F8FAFC;  /* light surface */
-  --hydro-surface-dark: #0F172A;   /* dark surface */
-  --hydro-text-light: #1E293B;     /* body text on light background */
-  --hydro-text-dark: #E2E8F0;      /* body text on dark background */
-  /* KEEP: emergency button only — do NOT recolor (REQ-41) */
-  --hydro-emergency: #F97316;
+  /* HydroFix navy/steel palette (Plan 04) lives in tailwind.config.js
+     (theme.extend.colors.hydraulik) — use bg-hydraulik-navy,
+     text-hydraulik-steel, etc. instead of raw hex values.
+     Emergency orange (REQ-41) stays hydraulik.orange — do NOT recolor. */
 }
 
 .dark {

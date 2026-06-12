@@ -216,7 +216,7 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
 
                 <!-- Submit -->
                 <button type="submit"
-                        class="w-full py-4 rounded-full bg-[#1E3A5F] text-white font-bold text-lg hover:bg-[#163059] active:bg-[#0F2444] transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        class="w-full py-4 rounded-full bg-hydraulik-navy text-white font-bold text-lg hover:bg-hydraulik-navy-dark active:bg-hydraulik-navy-deep transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-300 disabled:opacity-50 disabled:cursor-not-allowed"
                         [disabled]="submitting()">
                   @if (submitting()) {
                     <span>Wysyłanie...</span>
@@ -247,7 +247,7 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
                   </div>
                   <div>
                     <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide font-medium">Telefon (24/7)</p>
-                    <p class="font-bold text-lg text-[#1E3A5F] dark:text-blue-400 group-hover:underline">+48 123 456 789</p>
+                    <p class="font-bold text-lg text-hydraulik-navy dark:text-blue-400 group-hover:underline">+48 123 456 789</p>
                   </div>
                 </a>
 
@@ -287,7 +287,7 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
                 }
               </div>
               <div class="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
-                <p class="text-[#1E3A5F] dark:text-blue-300 text-sm font-medium text-center">
+                <p class="text-hydraulik-navy dark:text-blue-300 text-sm font-medium text-center">
                   Pogotowie hydrauliczne — dostępne 24/7 przez cały rok
                 </p>
               </div>

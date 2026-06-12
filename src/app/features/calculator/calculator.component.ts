@@ -30,11 +30,11 @@ type Step = 1 | 2 | 3;
         <div class="flex items-center justify-center gap-2 mb-10" aria-label="Postęp formularza">
           @for (s of [1, 2, 3]; track s) {
             <div class="flex items-center gap-2">
-              <div class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-colors" [class.bg-[#1E3A5F]]="step() >= s" [class.text-white]="step() >= s" [class.bg-gray-200]="step() < s" [class.text-gray-500]="step() < s">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-colors" [class.bg-hydraulik-navy]="step() >= s" [class.text-white]="step() >= s" [class.bg-gray-200]="step() < s" [class.text-gray-500]="step() < s">
                 {{ s }}
               </div>
               @if (s < 3) {
-                <div class="w-12 h-0.5 transition-colors" [class.bg-[#3B82F6]]="step() > s" [class.bg-gray-200]="step() <= s"></div>
+                <div class="w-12 h-0.5 transition-colors" [class.bg-hydraulik-steel]="step() > s" [class.bg-gray-200]="step() <= s"></div>
               }
             </div>
           }
@@ -52,7 +52,7 @@ type Step = 1 | 2 | 3;
 
                 <div class="grid grid-cols-2 gap-3 mb-6">
                   @for (opt of serviceOptions; track opt.value) {
-                    <button (click)="setServiceType(opt.value)" class="flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all text-left" [class.border-[#3B82F6]]="calc.serviceType() === opt.value" [class.bg-blue-50]="calc.serviceType() === opt.value" [class.text-[#1E3A5F]]="calc.serviceType() === opt.value" [class.border-gray-200]="calc.serviceType() !== opt.value" [attr.aria-pressed]="calc.serviceType() === opt.value">
+                    <button (click)="setServiceType(opt.value)" class="flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all text-left" [class.border-hydraulik-steel]="calc.serviceType() === opt.value" [class.bg-blue-50]="calc.serviceType() === opt.value" [class.text-hydraulik-navy]="calc.serviceType() === opt.value" [class.border-gray-200]="calc.serviceType() !== opt.value" [attr.aria-pressed]="calc.serviceType() === opt.value">
                       <span class="font-semibold text-sm">{{ opt.label }}</span>
                     </button>
                   }
@@ -64,12 +64,12 @@ type Step = 1 | 2 | 3;
                     <p class="font-medium">Pilna interwencja</p>
                     <p class="text-sm text-gray-500">Przyjazd do 45 minut (+50 zł)</p>
                   </div>
-                  <button (click)="calc.urgent.set(!calc.urgent())" role="switch" [attr.aria-checked]="calc.urgent()" class="relative w-12 h-6 rounded-full transition-colors" [class.bg-[#1E3A5F]]="calc.urgent()" [class.bg-gray-300]="!calc.urgent()">
+                  <button (click)="calc.urgent.set(!calc.urgent())" role="switch" [attr.aria-checked]="calc.urgent()" class="relative w-12 h-6 rounded-full transition-colors" [class.bg-hydraulik-navy]="calc.urgent()" [class.bg-gray-300]="!calc.urgent()">
                     <span class="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform" [class.translate-x-6]="calc.urgent()"></span>
                   </button>
                 </div>
 
-                <button (click)="goStep(2)" class="w-full bg-[#1E3A5F] text-white py-3 rounded-xl font-semibold hover:bg-[#163059] transition-colors">
+                <button (click)="goStep(2)" class="w-full bg-hydraulik-navy text-white py-3 rounded-xl font-semibold hover:bg-hydraulik-navy-dark transition-colors">
                   Dalej
                 </button>
               </div>
@@ -98,7 +98,7 @@ type Step = 1 | 2 | 3;
                     <p class="font-medium">Materiały instalacyjne</p>
                     <p class="text-sm text-gray-500">Rury, złączki, uszczelki (+100 zł)</p>
                   </div>
-                  <button (click)="calc.extraMaterials.set(!calc.extraMaterials())" role="switch" [attr.aria-checked]="calc.extraMaterials()" class="relative w-12 h-6 rounded-full transition-colors" [class.bg-[#1E3A5F]]="calc.extraMaterials()" [class.bg-gray-300]="!calc.extraMaterials()">
+                  <button (click)="calc.extraMaterials.set(!calc.extraMaterials())" role="switch" [attr.aria-checked]="calc.extraMaterials()" class="relative w-12 h-6 rounded-full transition-colors" [class.bg-hydraulik-navy]="calc.extraMaterials()" [class.bg-gray-300]="!calc.extraMaterials()">
                     <span class="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform" [class.translate-x-6]="calc.extraMaterials()"></span>
                   </button>
                 </div>
@@ -107,7 +107,7 @@ type Step = 1 | 2 | 3;
                   <button (click)="goStep(1)" class="flex-1 border border-gray-300 dark:border-gray-600 py-3 rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
                     Wstecz
                   </button>
-                  <button (click)="goStep(3)" class="flex-1 bg-[#1E3A5F] text-white py-3 rounded-xl font-semibold hover:bg-[#163059] transition-colors">
+                  <button (click)="goStep(3)" class="flex-1 bg-hydraulik-navy text-white py-3 rounded-xl font-semibold hover:bg-hydraulik-navy-dark transition-colors">
                     Dalej
                   </button>
                 </div>
@@ -140,7 +140,7 @@ type Step = 1 | 2 | 3;
                     <button type="button" (click)="goStep(2)" class="flex-1 border border-gray-300 dark:border-gray-600 py-3 rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
                       Wstecz
                     </button>
-                    <button type="submit" class="flex-1 bg-[#1E3A5F] text-white py-3 rounded-xl font-semibold hover:bg-[#163059] transition-colors">
+                    <button type="submit" class="flex-1 bg-hydraulik-navy text-white py-3 rounded-xl font-semibold hover:bg-hydraulik-navy-dark transition-colors">
                       Wyślij zapytanie
                     </button>
                   </div>
