@@ -44,11 +44,11 @@ import { FAQ_ITEMS, FAQ_CATEGORIES, FaqCategory } from '../../data/faq.data';
 
         <!-- Category tabs -->
         <div class="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filtruj pytania według kategorii">
-          <button (click)="setCategory(null)" class="px-4 py-2 rounded-full text-sm font-medium transition-colors" [class.bg-hydraulik-navy]="!activeCategory()" [class.text-white]="!activeCategory()" [class.bg-white]="activeCategory() !== null" [class.dark:bg-gray-800]="activeCategory() !== null" [class.text-gray-700]="activeCategory() !== null" [attr.aria-pressed]="!activeCategory()">
+          <button (click)="setCategory(null)" class="px-4 py-2 rounded-full text-sm font-medium transition-colors" [class.bg-hydraulik-navy]="!activeCategory()" [class.text-white]="!activeCategory()" [class.bg-white]="activeCategory() !== null" [class.dark:bg-gray-800]="activeCategory() !== null" [class.text-gray-700]="activeCategory() !== null" [class.dark:text-gray-300]="activeCategory() !== null" [attr.aria-pressed]="!activeCategory()">
             Wszystkie
           </button>
           @for (cat of categories; track cat) {
-            <button (click)="setCategory(cat)" class="px-4 py-2 rounded-full text-sm font-medium transition-colors" [class.bg-hydraulik-navy]="activeCategory() === cat" [class.text-white]="activeCategory() === cat" [class.bg-white]="activeCategory() !== cat" [class.dark:bg-gray-800]="activeCategory() !== cat" [class.text-gray-700]="activeCategory() !== cat" [attr.aria-pressed]="activeCategory() === cat">
+            <button (click)="setCategory(cat)" class="px-4 py-2 rounded-full text-sm font-medium transition-colors" [class.bg-hydraulik-navy]="activeCategory() === cat" [class.text-white]="activeCategory() === cat" [class.bg-white]="activeCategory() !== cat" [class.dark:bg-gray-800]="activeCategory() !== cat" [class.text-gray-700]="activeCategory() !== cat" [class.dark:text-gray-300]="activeCategory() !== cat" [attr.aria-pressed]="activeCategory() === cat">
               {{ cat }}
             </button>
           }
