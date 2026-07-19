@@ -30,7 +30,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 4,
     category: 'Płatności',
     question: 'Czy wycena jest bezpłatna?',
-    answer: 'Wycena przez telefon lub za pośrednictwem kalkulatora online jest zawsze bezpłatna. Dojazd do oceny zakresu prac wliczamy w koszt wykonania usługi — nie pobieramy opłat za same oględziny.',
+    answer: 'Wycena przez telefon lub za pośrednictwem kalkulatora online jest zawsze bezpłatna. Dojazd do oceny zakresu prac wliczamy w koszt wykonania usługi - nie pobieramy opłat za same oględziny.',
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 6,
     category: 'Zakres Usług',
     question: 'Czy wykonujecie remonty łazienek?',
-    answer: 'Tak, wykonujemy kompleksowe remonty łazienek — od projektu przez wyburzenie, ułożenie płytek, montaż armatury i instalacji, aż po wykończenie. Wszystko pod klucz.',
+    answer: 'Tak, wykonujemy kompleksowe remonty łazienek - od projektu przez wyburzenie, ułożenie płytek, montaż armatury i instalacji, aż po wykończenie. Wszystko pod klucz.',
   },
   {
     id: 7,

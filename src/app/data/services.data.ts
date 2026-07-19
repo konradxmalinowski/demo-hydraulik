@@ -46,7 +46,7 @@ export const HYDRAULIK_SERVICES: HydraulikService[] = [
     id: 'pogotowie',
     name: 'Pogotowie hydrauliczne',
     icon: '',
-    description: 'Całodobowe pogotowie hydrauliczne 24/7. Awarie, pęknięte rury, zalania — działamy natychmiast.',
+    description: 'Całodobowe pogotowie hydrauliczne 24/7. Awarie, pęknięte rury, zalania - działamy natychmiast.',
     slug: 'pogotowie-hydrauliczne',
   },
 ];

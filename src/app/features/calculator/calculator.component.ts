@@ -118,7 +118,7 @@ type Step = 1 | 2 | 3;
             @if (step() === 3) {
               <div>
                 <h2 class="text-2xl font-bold mb-2">Krok 3: Dane kontaktowe</h2>
-                <p class="text-gray-500 dark:text-gray-400 mb-6">Wyślij zapytanie — oddzwonimy w ciągu 15 minut</p>
+                <p class="text-gray-500 dark:text-gray-400 mb-6">Wyślij zapytanie - oddzwonimy w ciągu 15 minut</p>
 
                 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
                   <div>
@@ -151,7 +151,7 @@ type Step = 1 | 2 | 3;
 
           <!-- Right: LCD price display -->
           <div class="bg-gray-900 rounded-2xl shadow-lg p-8 font-mono sticky top-24">
-            <div class="text-gray-400 text-xs uppercase tracking-widest mb-6 text-center">Wycena — Panel LCD</div>
+            <div class="text-gray-400 text-xs uppercase tracking-widest mb-6 text-center">Wycena - Panel LCD</div>
 
             <div class="space-y-4">
               @for (row of priceRows(); track row.label) {
@@ -205,7 +205,7 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void {
     this.seoService.setPage({
       title: 'Kalkulator Wyceny',
-      description: 'Oblicz orientacyjny koszt usługi hydraulicznej. Kalkulator wyceny — dojazd, robocizna, materiały.',
+      description: 'Oblicz orientacyjny koszt usługi hydraulicznej. Kalkulator wyceny - dojazd, robocizna, materiały.',
       url: '/kalkulator',
     });
   }

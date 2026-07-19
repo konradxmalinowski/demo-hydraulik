@@ -13,7 +13,7 @@ export interface SeoConfig {
 
 const BASE_URL = 'https://hydrofix-krakow.pl';
 const DEFAULT_IMAGE = `${BASE_URL}/og-image.svg`;
-const BUSINESS_NAME = 'HydroFix 24/7 — Hydraulik Kraków';
+const BUSINESS_NAME = 'HydroFix 24/7 - Hydraulik Kraków';
 const PHONE = '+48 123 456 789';
 const EMAIL = 'kontakt@hydrofix-krakow.pl';
 const ADDRESS = 'ul. Wodna 12, 30-001 Kraków';

@@ -27,7 +27,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 2,
     category: 'Łazienki',
-    title: 'Remont łazienki — komplet',
+    title: 'Remont łazienki - komplet',
     beforeSrc: `https://images.unsplash.com/photo-1552321554-5fefe8c9ef14${UNSPLASH_PARAMS}`,
     afterSrc: `https://images.unsplash.com/photo-1620626011761-996317b8d101${UNSPLASH_PARAMS}`,
     beforeAlt: 'Stara łazienka przed remontem',

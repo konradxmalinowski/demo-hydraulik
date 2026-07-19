@@ -79,7 +79,7 @@ export class GalleryComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.setPage({
-      title: 'Realizacje — Przed i Po',
+      title: 'Realizacje - Przed i Po',
       description: 'Galeria realizacji HydroFix: naprawy awarii, remonty łazienek, instalacje wodne i ogrzewanie. Przesuń suwak aby zobaczyć efekt przed i po.',
       url: '/galeria',
     });

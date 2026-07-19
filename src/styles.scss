@@ -11,9 +11,9 @@
   --color-text: var(--color-dark);
 
   /* HydroFix navy/steel palette (Plan 04) lives in tailwind.config.js
-     (theme.extend.colors.hydraulik) — use bg-hydraulik-navy,
+     (theme.extend.colors.hydraulik) - use bg-hydraulik-navy,
      text-hydraulik-steel, etc. instead of raw hex values.
-     Emergency orange (REQ-41) stays hydraulik.orange — do NOT recolor. */
+     Emergency orange (REQ-41) stays hydraulik.orange - do NOT recolor. */
 }
 
 .dark {

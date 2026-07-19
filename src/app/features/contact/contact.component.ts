@@ -76,7 +76,7 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
         <!-- Header -->
         <div class="text-center mb-12">
           <h1 class="text-4xl font-bold mb-3">Kontakt</h1>
-          <p class="text-gray-600 dark:text-gray-400 text-lg">Napisz do nas lub zadzwoń — odpowiemy najszybciej jak to możliwe</p>
+          <p class="text-gray-600 dark:text-gray-400 text-lg">Napisz do nas lub zadzwoń - odpowiemy najszybciej jak to możliwe</p>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-12 items-start">
@@ -226,7 +226,7 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
                 </button>
 
                 <p class="text-xs text-gray-400 text-center">
-                  To jest wersja demonstracyjna — żadne dane nie są przesyłane.
+                  To jest wersja demonstracyjna - żadne dane nie są przesyłane.
                 </p>
               </form>
             }
@@ -288,7 +288,7 @@ const DAYS_PL = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', '
               </div>
               <div class="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
                 <p class="text-hydraulik-navy dark:text-blue-300 text-sm font-medium text-center">
-                  Pogotowie hydrauliczne — dostępne 24/7 przez cały rok
+                  Pogotowie hydrauliczne - dostępne 24/7 przez cały rok
                 </p>
               </div>
             </div>
@@ -346,7 +346,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.setPage({
-      title: 'Kontakt — Zadzwoń lub Napisz',
+      title: 'Kontakt - Zadzwoń lub Napisz',
       description: 'Skontaktuj się z HydroFix. Pogotowie hydrauliczne 24/7 w Krakowie i okolicach. Telefon, e-mail, formularz kontaktowy. Odpiszemy w ciągu godziny.',
       url: '/kontakt',
     });
@@ -358,7 +358,7 @@ export class ContactComponent implements OnInit {
 
     this.submitting.set(true);
 
-    // Demo mode — no real network request (T-03-H1 mitigation)
+    // Demo mode - no real network request (T-03-H1 mitigation)
     setTimeout(() => {
       this.submitting.set(false);
       this.submitted.set(true);

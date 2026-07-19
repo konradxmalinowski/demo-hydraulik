@@ -63,7 +63,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
           <!-- Dyżur badge -->
           <div class="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-500/40 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in-up">
             <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-            Dyżur aktywny — dojazd ok. {{ arrivalTime() }} min (demo)
+            Dyżur aktywny - dojazd ok. {{ arrivalTime() }} min (demo)
           </div>
 
           <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up animate-delay-1">
@@ -73,7 +73,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
           </h1>
 
           <p class="text-xl text-gray-300 mb-8 leading-relaxed animate-fade-in-up animate-delay-2">
-            Pogotowie hydrauliczne w Krakowie i okolicach. Przyjedziemy do Ciebie w 30-45 minut od zgłoszenia — również w nocy i w weekendy.
+            Pogotowie hydrauliczne w Krakowie i okolicach. Przyjedziemy do Ciebie w 30-45 minut od zgłoszenia - również w nocy i w weekendy.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up animate-delay-3">
@@ -199,7 +199,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
                 class="w-full h-full border-0"
                 loading="lazy"
                 title="Mapa obszaru działania HydroFix Kraków"
-                aria-label="Mapa: Kraków i okolice — obszar działania hydraulika"
+                aria-label="Mapa: Kraków i okolice - obszar działania hydraulika"
               ></iframe>
             </div>
 
@@ -215,7 +215,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
               </ul>
               <div class="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
                 <p class="text-blue-800 dark:text-blue-300 text-sm font-medium">
-                  Poza obszarem? Zadzwoń — często możemy dojechać dalej.
+                  Poza obszarem? Zadzwoń - często możemy dojechać dalej.
                 </p>
               </div>
             </div>
@@ -331,7 +331,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
     <section class="py-20 px-4 bg-hydraulik-navy text-white">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-extrabold mb-4">Masz awarię? Działamy 24/7!</h2>
-        <p class="text-xl text-blue-100 mb-8">Nie czekaj — każda chwila może kosztować więcej. Zadzwoń lub wyślij zgłoszenie online.</p>
+        <p class="text-xl text-blue-100 mb-8">Nie czekaj - każda chwila może kosztować więcej. Zadzwoń lub wyślij zgłoszenie online.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="tel:+48123456789" class="inline-flex items-center justify-center gap-2 bg-white text-hydraulik-navy px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-colors">
             +48 123 456 789
@@ -380,7 +380,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.seoService.setPage({
-      title: 'Hydraulik Kraków 24/7 — Pogotowie Hydrauliczne',
+      title: 'Hydraulik Kraków 24/7 - Pogotowie Hydrauliczne',
       description: 'HydroFix to profesjonalne pogotowie hydrauliczne w Krakowie i okolicach. Przyjedziemy w 30-45 minut. Usuwanie awarii, montaż armatury, instalacje wodne. Zadzwoń 24/7.',
       url: '/',
     });

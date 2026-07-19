@@ -11,7 +11,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Marek W.',
     city: 'Kraków',
     rating: 5,
-    text: 'Błyskawiczna reakcja na awarię — przyjechali w 35 minut. Rura pęknięta w nocy, a oni już o 23 byli na miejscu. Polecam z całego serca!',
+    text: 'Błyskawiczna reakcja na awarię - przyjechali w 35 minut. Rura pęknięta w nocy, a oni już o 23 byli na miejscu. Polecam z całego serca!',
     date: '2024-11-15',
   },
   {
@@ -46,21 +46,21 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Ewa Z.',
     city: 'Kraków',
     rating: 5,
-    text: 'Pilne zlecenie — zalanie przez sąsiada. Przyjechali w 28 minut i wszystko naprawili. Cena uczciwa jak zawsze.',
+    text: 'Pilne zlecenie - zalanie przez sąsiada. Przyjechali w 28 minut i wszystko naprawili. Cena uczciwa jak zawsze.',
     date: '2024-06-18',
   },
   {
     name: 'Jakub R.',
     city: 'Niepołomice',
     rating: 5,
-    text: 'Kilka wizyt w ciągu roku — za każdym razem pełen profesjonalizm. To już mój hydraulik na stałe.',
+    text: 'Kilka wizyt w ciągu roku - za każdym razem pełen profesjonalizm. To już mój hydraulik na stałe.',
     date: '2024-05-30',
   },
   {
     name: 'Monika L.',
     city: 'Myślenice',
     rating: 4,
-    text: 'Remont łazienki — kafelki, armatura, odpływy. Wszystko pięknie wykonane. Polecam za jakość i podejście do klienta.',
+    text: 'Remont łazienki - kafelki, armatura, odpływy. Wszystko pięknie wykonane. Polecam za jakość i podejście do klienta.',
     date: '2024-04-15',
   },
 ];

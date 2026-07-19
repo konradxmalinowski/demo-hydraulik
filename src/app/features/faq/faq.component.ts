@@ -96,7 +96,7 @@ import { FAQ_ITEMS, FAQ_CATEGORIES, FaqCategory } from '../../data/faq.data';
         <!-- CTA -->
         <div class="mt-12 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border border-blue-200 dark:border-blue-800 text-center">
           <h3 class="font-bold text-lg mb-2">Nie znalazłeś odpowiedzi?</h3>
-          <p class="text-gray-600 dark:text-gray-400 mb-4">Skontaktuj się z nami bezpośrednio — odpiszemy w ciągu godziny.</p>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Skontaktuj się z nami bezpośrednio - odpiszemy w ciągu godziny.</p>
           <a href="tel:+48123456789" class="inline-flex items-center gap-2 bg-hydraulik-navy text-white px-6 py-3 rounded-full font-semibold hover:bg-hydraulik-navy-dark transition-colors">
             +48 123 456 789
           </a>
@@ -142,7 +142,7 @@ export class FaqComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.seoService.setPage({
-      title: 'FAQ — Często Zadawane Pytania',
+      title: 'FAQ - Często Zadawane Pytania',
       description: 'Odpowiedzi na najczęstsze pytania dotyczące usług hydraulicznych: płatności, awarie, zakres prac, gwarancja. HydroFix Kraków.',
       url: '/faq',
     });

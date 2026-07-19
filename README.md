@@ -1,8 +1,8 @@
 # Demo: Hydraulik
 
-Działające demo strony dla hydraulika / pogotowia hydraulicznego — zbudowane w Angular + TypeScript z Angular Signals i SSR.
+Działające demo strony dla hydraulika / pogotowia hydraulicznego - zbudowane w Angular + TypeScript z Angular Signals i SSR.
 
-Część portfolio [Konrad Malinowski](http://konrad.malinowski.ct8.pl) — pokazuje, jak może wyglądać strona Twojej firmy.
+Część portfolio [Konrad Malinowski](http://konrad.malinowski.ct8.pl) - pokazuje, jak może wyglądać strona Twojej firmy.
 
 **Live demo:** https://konradxmalinowski.github.io/demo-hydraulik/
 
@@ -10,20 +10,20 @@ Część portfolio [Konrad Malinowski](http://konrad.malinowski.ct8.pl) — poka
 
 ## Co pokazuje to demo
 
-- Przycisk awarii z animacją pulsu — numer telefonu widoczny natychmiast
+- Przycisk awarii z animacją pulsu - numer telefonu widoczny natychmiast
 - Kalkulator wyceny usługi krok po kroku
 - Galeria realizacji z suwakiem before/after
 - Mapa obszaru działania
-- Tryb 24/7 — pełne pogotowie hydrauliczne
+- Tryb 24/7 - pełne pogotowie hydrauliczne
 - Core Web Vitals zoptymalizowane (SSR + lazy loading)
 
 ## Stack
 
 - **Angular 19** + TypeScript
-- **Angular Signals** — reaktywny stan bez BehaviorSubject
-- **SSR (Server-Side Rendering)** — lepsza indeksacja i LCP
-- **Tailwind CSS** — stylowanie
-- **Angular CLI** — build i serwowanie
+- **Angular Signals** - reaktywny stan bez BehaviorSubject
+- **SSR (Server-Side Rendering)** - lepsza indeksacja i LCP
+- **Tailwind CSS** - stylowanie
+- **Angular CLI** - build i serwowanie
 
 ## Uruchomienie lokalne
 
