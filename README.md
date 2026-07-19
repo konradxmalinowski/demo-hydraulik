@@ -16,6 +16,7 @@ Część portfolio [Konrad Malinowski](http://konrad.malinowski.ct8.pl) - pokazu
 - Mapa obszaru działania
 - Tryb 24/7 - pełne pogotowie hydrauliczne
 - Core Web Vitals zoptymalizowane (SSR + lazy loading)
+- PWA - aplikację można zainstalować na telefonie, działa też offline
 
 ## Stack
 
