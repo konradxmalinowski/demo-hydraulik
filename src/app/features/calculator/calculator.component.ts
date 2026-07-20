@@ -52,7 +52,7 @@ type Step = 1 | 2 | 3;
 
                 <div class="grid grid-cols-2 gap-3 mb-6">
                   @for (opt of serviceOptions; track opt.value) {
-                    <button (click)="setServiceType(opt.value)" class="flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all text-left" [class.border-hydraulik-steel]="calc.serviceType() === opt.value" [class.bg-blue-50]="calc.serviceType() === opt.value" [class.text-hydraulik-navy]="calc.serviceType() === opt.value" [class.border-gray-200]="calc.serviceType() !== opt.value" [attr.aria-pressed]="calc.serviceType() === opt.value">
+                    <button (click)="setServiceType(opt.value)" class="flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all text-left" [class.border-hydraulik-steel]="calc.serviceType() === opt.value" [class.bg-blue-50]="calc.serviceType() === opt.value" [class.text-hydraulik-navy]="calc.serviceType() === opt.value" [class.border-gray-400]="calc.serviceType() !== opt.value" [class.dark:border-gray-200]="calc.serviceType() !== opt.value" [attr.aria-pressed]="calc.serviceType() === opt.value">
                       <span class="font-semibold text-sm">{{ opt.label }}</span>
                     </button>
                   }
@@ -62,7 +62,7 @@ type Step = 1 | 2 | 3;
                 <div class="flex items-center justify-between py-3 border-t border-gray-100 dark:border-gray-800 mb-6">
                   <div>
                     <p class="font-medium">Pilna interwencja</p>
-                    <p class="text-sm text-gray-500">Przyjazd do 45 minut (+50 zł)</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Przyjazd do 45 minut (+50 zł)</p>
                   </div>
                   <button (click)="calc.urgent.set(!calc.urgent())" role="switch" [attr.aria-checked]="calc.urgent()" class="relative w-12 h-6 rounded-full transition-colors" [class.bg-hydraulik-navy]="calc.urgent()" [class.bg-gray-300]="!calc.urgent()">
                     <span class="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform" [class.translate-x-6]="calc.urgent()"></span>
@@ -87,7 +87,7 @@ type Step = 1 | 2 | 3;
                     Szacowany czas pracy: <span class="text-blue-500 font-bold">{{ calc.hoursCount() }} godz.</span>
                   </label>
                   <input id="hours-slider" type="range" min="1" max="8" step="1" [value]="calc.hoursCount()" (input)="setHours($event)" class="w-full accent-blue-500" />
-                  <div class="flex justify-between text-xs text-gray-400 mt-1">
+                  <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
                     <span>1h</span><span>4h</span><span>8h</span>
                   </div>
                 </div>
@@ -96,7 +96,7 @@ type Step = 1 | 2 | 3;
                 <div class="flex items-center justify-between py-3 border-t border-b border-gray-100 dark:border-gray-800 mb-6">
                   <div>
                     <p class="font-medium">Materiały instalacyjne</p>
-                    <p class="text-sm text-gray-500">Rury, złączki, uszczelki (+100 zł)</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Rury, złączki, uszczelki (+100 zł)</p>
                   </div>
                   <button (click)="calc.extraMaterials.set(!calc.extraMaterials())" role="switch" [attr.aria-checked]="calc.extraMaterials()" class="relative w-12 h-6 rounded-full transition-colors" [class.bg-hydraulik-navy]="calc.extraMaterials()" [class.bg-gray-300]="!calc.extraMaterials()">
                     <span class="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform" [class.translate-x-6]="calc.extraMaterials()"></span>
@@ -150,28 +150,28 @@ type Step = 1 | 2 | 3;
           </div>
 
           <!-- Right: LCD price display -->
-          <div class="bg-gray-900 rounded-2xl shadow-lg p-8 font-mono sticky top-24">
-            <div class="text-gray-400 text-xs uppercase tracking-widest mb-6 text-center">Wycena - Panel LCD</div>
+          <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 font-mono sticky top-24">
+            <div class="text-gray-500 dark:text-gray-400 text-xs uppercase tracking-widest mb-6 text-center">Wycena - Panel LCD</div>
 
             <div class="space-y-4">
               @for (row of priceRows(); track row.label) {
-                <div class="flex items-center justify-between py-3 border-b border-gray-700/50 last:border-0">
-                  <span class="text-gray-400 text-sm">{{ row.label }}</span>
-                  <span class="text-xl font-bold tabular-nums text-green-400">{{ row.value }} zł</span>
+                <div class="flex items-center justify-between py-3 border-b border-gray-200 dark:border-gray-700/50 last:border-0">
+                  <span class="text-gray-600 dark:text-gray-400 text-sm">{{ row.label }}</span>
+                  <span class="text-xl font-bold tabular-nums text-green-700 dark:text-green-400">{{ row.value }} zł</span>
                 </div>
               }
             </div>
 
-            <div class="mt-6 pt-6 border-t border-gray-600">
+            <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-600">
               <div class="flex items-center justify-between">
-                <span class="text-gray-300 font-semibold text-lg">RAZEM</span>
-                <span class="text-3xl font-bold text-blue-400 tabular-nums">{{ calc.razem() }} zł</span>
+                <span class="text-gray-700 dark:text-gray-300 font-semibold text-lg">RAZEM</span>
+                <span class="text-3xl font-bold text-blue-700 dark:text-blue-400 tabular-nums">{{ calc.razem() }} zł</span>
               </div>
               <p class="text-gray-500 text-xs mt-2 text-center">* Wycena orientacyjna. Ostateczna cena po oględzinach.</p>
             </div>
 
             <div class="mt-4 text-center">
-              <span class="inline-flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-full text-xs text-gray-300">
+              <span class="inline-flex items-center gap-2 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full text-xs text-gray-700 dark:text-gray-300">
                 <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
                 {{ currentServiceLabel() }}
               </span>
