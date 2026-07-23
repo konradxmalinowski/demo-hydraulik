@@ -6,7 +6,7 @@ import {
   signal,
   computed,
 } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { SeoService } from '../../core/services/seo.service';
 import { DemoModeService } from '../../core/services/demo-mode.service';
 
@@ -389,7 +389,7 @@ export class ContactComponent implements OnInit {
     return 'Nieprawidłowa wartość';
   }
 
-  private buildHours(): Array<{ day: string; hours: string; isToday: boolean }> {
+  private buildHours(): { day: string; hours: string; isToday: boolean }[] {
     const todayIdx = new Date().getDay(); // 0 = Sunday
     return DAYS_PL.map((day, idx) => ({
       day,

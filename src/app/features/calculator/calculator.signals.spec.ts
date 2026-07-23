@@ -1,11 +1,10 @@
-import { TestBed } from '@angular/core/testing';
 import { BASE_DOJAZD, PRICING_RATES } from '../../data/pricing.data';
 
 // RED PHASE: These tests are written before the implementation.
 // They will fail until calculator.signals.ts is created.
 
 describe('Calculator Signals', () => {
-  let CalculatorSignals: any;
+  let CalculatorSignals: typeof import('./calculator.signals').CalculatorSignals;
 
   beforeEach(async () => {
     // Dynamically import so the test can run even if the file doesn't exist yet (will throw)

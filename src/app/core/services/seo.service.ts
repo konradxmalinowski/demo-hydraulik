@@ -1,5 +1,4 @@
-import { Injectable, inject, PLATFORM_ID } from '@angular/core';
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Injectable, inject, DOCUMENT } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { FAQ_ITEMS } from '../../data/faq.data';
 
@@ -11,8 +10,8 @@ export interface SeoConfig {
   noindex?: boolean;
 }
 
-const BASE_URL = 'https://hydrofix-krakow.pl';
-const DEFAULT_IMAGE = `${BASE_URL}/og-image.svg`;
+const BASE_URL = 'https://konradxmalinowski.github.io/demo-hydraulik';
+const DEFAULT_IMAGE = `${BASE_URL}/og-image.png`;
 const BUSINESS_NAME = 'HydroFix 24/7 - Hydraulik Kraków';
 const PHONE = '+48 123 456 789';
 const EMAIL = 'kontakt@hydrofix-krakow.pl';
@@ -29,7 +28,6 @@ export class SeoService {
   private readonly meta = inject(Meta);
   private readonly title = inject(Title);
   private readonly document = inject(DOCUMENT);
-  private readonly platformId = inject(PLATFORM_ID);
 
   setPage(config: SeoConfig): void {
     const fullTitle = `${config.title} | HydroFix 24/7 Kraków`;
@@ -50,11 +48,23 @@ export class SeoService {
     this.meta.updateTag({ name: 'twitter:description', content: config.description });
     this.meta.updateTag({ name: 'twitter:image', content: image });
 
+    this.setCanonicalUrl(url);
+
     if (config.noindex) {
       this.meta.updateTag({ name: 'robots', content: 'noindex, nofollow' });
     } else {
       this.meta.updateTag({ name: 'robots', content: 'index, follow' });
     }
+  }
+
+  private setCanonicalUrl(url: string): void {
+    let link: HTMLLinkElement | null = this.document.querySelector('link[rel="canonical"]');
+    if (!link) {
+      link = this.document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      this.document.head.appendChild(link);
+    }
+    link.setAttribute('href', url);
   }
 
   injectLocalBusinessJsonLd(): void {
@@ -70,7 +80,7 @@ export class SeoService {
           telephone: PHONE,
           email: EMAIL,
           image: DEFAULT_IMAGE,
-          logo: `${BASE_URL}/assets/icons/logo.svg`,
+          logo: `${BASE_URL}/favicon.svg`,
           address: {
             '@type': 'PostalAddress',
             streetAddress: ADDRESS,

@@ -1,7 +1,10 @@
 import {
   Component,
   ChangeDetectionStrategy,
+  ElementRef,
   HostListener,
+  ViewChild,
+  effect,
   signal,
   inject,
   PLATFORM_ID,
@@ -79,7 +82,8 @@ interface NavLink {
             Zgłoś awarię
           </a>
 
-          <button class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          <button #menuToggleRef
+                  class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                   (click)="toggleMobileMenu()"
                   [attr.aria-expanded]="mobileOpen()"
                   aria-controls="mobile-menu"
@@ -103,17 +107,20 @@ interface NavLink {
            (click)="closeMobileMenu()"
            aria-hidden="true"></div>
 
-      <div id="mobile-menu"
+      <div #drawerRef
+           id="mobile-menu"
            role="dialog"
            aria-modal="true"
            aria-label="Menu mobilne"
+           tabindex="-1"
            class="fixed top-0 right-0 bottom-0 w-72 z-50 md:hidden flex flex-col shadow-xl"
            [class.bg-white]="!isDark()"
            [class.bg-gray-900]="isDark()"
            [@drawerSlide]>
         <div class="flex items-center justify-between px-4 h-16 border-b border-gray-200 dark:border-gray-700">
           <span class="font-bold text-blue-500">Menu</span>
-          <button (click)="closeMobileMenu()"
+          <button #drawerCloseRef
+                  (click)="closeMobileMenu()"
                   class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
                   aria-label="Zamknij menu">
             <span aria-hidden="true" class="text-xl">×</span>
@@ -163,6 +170,10 @@ export class NavbarComponent {
     { label: 'Kontakt', path: '/kontakt' },
   ];
 
+  @ViewChild('menuToggleRef') private readonly menuToggleRef?: ElementRef<HTMLButtonElement>;
+  @ViewChild('drawerRef') private readonly drawerRef?: ElementRef<HTMLElement>;
+  @ViewChild('drawerCloseRef') private readonly drawerCloseRef?: ElementRef<HTMLButtonElement>;
+
   constructor() {
     this.isHome.set(this.isHomeUrl(this.router.url));
     this.router.events.pipe(takeUntilDestroyed()).subscribe((event) => {
@@ -178,12 +189,38 @@ export class NavbarComponent {
       this.isDark.set(dark);
       this.applyDarkMode(dark);
     }
+
+    // Focus management for the mobile drawer. `hasOpened` guards the very first
+    // (mount-time) effect run so we never steal focus onto the hamburger button
+    // before the user has interacted with it.
+    let hasOpened = false;
+    effect(() => {
+      const isOpen = this.mobileOpen();
+      if (!isPlatformBrowser(this.platformId)) return;
+
+      if (isOpen) {
+        hasOpened = true;
+        // Wait for the drawer to render before moving focus into it.
+        queueMicrotask(() => {
+          (this.drawerCloseRef?.nativeElement ?? this.drawerRef?.nativeElement)?.focus();
+        });
+      } else if (hasOpened) {
+        this.menuToggleRef?.nativeElement.focus();
+      }
+    });
   }
 
   @HostListener('window:scroll', [])
   onScroll(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.scrolled.set(window.scrollY > 20);
+    }
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    if (this.mobileOpen()) {
+      this.closeMobileMenu();
     }
   }
 

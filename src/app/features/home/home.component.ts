@@ -6,13 +6,10 @@ import {
   signal,
   PLATFORM_ID,
   AfterViewInit,
-  ElementRef,
-  viewChild,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { SeoService } from '../../core/services/seo.service';
-import { DemoModeService } from '../../core/services/demo-mode.service';
 import { EmergencyButtonComponent } from '../../shared/components/emergency-button/emergency-button.component';
 import { HYDRAULIK_SERVICES } from '../../data/services.data';
 import { TESTIMONIALS } from '../../data/testimonials.data';

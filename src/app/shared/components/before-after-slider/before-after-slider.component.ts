@@ -78,18 +78,35 @@ import { isPlatformBrowser } from '@angular/common';
          [attr.aria-label]="'Zdjęcie przed i po: ' + (title || 'realizacja')">
 
       <!-- Before image (full width) -->
-      <img [src]="beforeSrc"
-           [alt]="beforeAlt || 'Przed'"
-           class="w-full h-full object-cover"
-           loading="lazy" />
+      <picture>
+        @if (beforeSrcsetWebp) {
+          <source type="image/webp" [srcset]="beforeSrcsetWebp" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
+        }
+        @if (beforeSrcsetJpg) {
+          <source type="image/jpeg" [srcset]="beforeSrcsetJpg" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
+        }
+        <img [src]="beforeSrc"
+             [alt]="beforeAlt || 'Przed'"
+             class="w-full h-full object-cover"
+             width="1200" height="675"
+             loading="lazy" />
+      </picture>
 
       <!-- After image revealed by clip-path -->
-      <img #afterImg
-           [src]="afterSrc"
-           [alt]="afterAlt || 'Po'"
-           class="after-img"
-           [style.clip-path]="clipPath()"
-           loading="lazy" />
+      <picture class="after-img" [style.clip-path]="clipPath()">
+        @if (afterSrcsetWebp) {
+          <source type="image/webp" [srcset]="afterSrcsetWebp" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
+        }
+        @if (afterSrcsetJpg) {
+          <source type="image/jpeg" [srcset]="afterSrcsetJpg" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
+        }
+        <img #afterImg
+             [src]="afterSrc"
+             [alt]="afterAlt || 'Po'"
+             class="w-full h-full object-cover"
+             width="1200" height="675"
+             loading="lazy" />
+      </picture>
 
       <!-- Labels -->
       <span class="label" style="left: 8px">Przed</span>
@@ -105,6 +122,10 @@ import { isPlatformBrowser } from '@angular/common';
 export class BeforeAfterSliderComponent implements AfterViewInit, OnDestroy {
   @Input() beforeSrc = '';
   @Input() afterSrc = '';
+  @Input() beforeSrcsetWebp = '';
+  @Input() beforeSrcsetJpg = '';
+  @Input() afterSrcsetWebp = '';
+  @Input() afterSrcsetJpg = '';
   @Input() beforeAlt = 'Przed';
   @Input() afterAlt = 'Po';
   @Input() title = '';

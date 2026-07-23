@@ -1,19 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
   <head>
     <meta charset="utf-8">
-    <title>demo-hydraulik</title>
-    <script>
-      var pathSegmentsToKeep = 1;
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.host +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Strona nie znaleziona - demo-hydraulik</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        background: #FAFAFA;
+        color: #1A1A1A;
+        text-align: center;
+        padding: 1.5rem;
+        box-sizing: border-box;
+      }
+      main { max-width: 28rem; }
+      h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+      p { margin-bottom: 1.5rem; }
+      a {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: #3B82F6;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        font-weight: 600;
+      }
+      a:hover, a:focus { background: #2563EB; }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <h1>404 - Strona nie znaleziona</h1>
+      <p>Podana strona nie istnieje. Wróć na stronę główną demo.</p>
+      <a href="/demo-hydraulik/">Wróć na stronę główną</a>
+    </main>
+  </body>
 </html>

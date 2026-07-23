@@ -40,10 +40,14 @@ import { GALLERY_ITEMS, GALLERY_CATEGORIES, GalleryCategory } from '../../data/g
           @for (item of filteredItems(); track item.id) {
             <div class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <app-before-after-slider
-                [beforeSrc]="item.beforeSrc"
-                [afterSrc]="item.afterSrc"
-                [beforeAlt]="item.beforeAlt"
-                [afterAlt]="item.afterAlt"
+                [beforeSrc]="item.before.src"
+                [afterSrc]="item.after.src"
+                [beforeSrcsetWebp]="item.before.srcsetWebp"
+                [beforeSrcsetJpg]="item.before.srcsetJpg"
+                [afterSrcsetWebp]="item.after.srcsetWebp"
+                [afterSrcsetJpg]="item.after.srcsetJpg"
+                [beforeAlt]="item.before.alt"
+                [afterAlt]="item.after.alt"
                 [title]="item.title"
                 height="240px"
               />

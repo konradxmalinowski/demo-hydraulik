@@ -1,77 +1,86 @@
 export type GalleryCategory = 'Awarie' | 'Łazienki' | 'Instalacje' | 'Ogrzewanie';
 
+export interface GalleryImage {
+  /** Fallback <img src> - a single JPEG, used by browsers that ignore srcset/picture. */
+  src: string;
+  /** WebP responsive sources, e.g. "assets/gallery/1-before-480.webp 480w, ...". */
+  srcsetWebp: string;
+  /** JPEG responsive sources for browsers without WebP support. */
+  srcsetJpg: string;
+  alt: string;
+}
+
 export interface GalleryItem {
   id: number;
   category: GalleryCategory;
   title: string;
-  beforeSrc: string;
-  afterSrc: string;
-  beforeAlt: string;
-  afterAlt: string;
+  before: GalleryImage;
+  after: GalleryImage;
   description: string;
 }
 
-const UNSPLASH_PARAMS = '?auto=format&fit=crop&w=1200&q=80';
+/** Self-hosted, pre-optimized (WebP + JPEG fallback, 480/800/1200w) replacements for the former Unsplash hotlinks. */
+const GALLERY_BASE = 'assets/gallery';
+const WIDTHS = [480, 800, 1200] as const;
+
+function image(name: string, alt: string): GalleryImage {
+  const srcsetWebp = WIDTHS.map(w => `${GALLERY_BASE}/${name}-${w}.webp ${w}w`).join(', ');
+  const srcsetJpg = `${GALLERY_BASE}/${name}-800.jpg 800w`;
+  return {
+    src: `${GALLERY_BASE}/${name}-800.jpg`,
+    srcsetWebp,
+    srcsetJpg,
+    alt,
+  };
+}
 
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 1,
     category: 'Awarie',
     title: 'Naprawa pękniętej rury',
-    beforeSrc: `https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1${UNSPLASH_PARAMS}`,
-    afterSrc: `https://images.unsplash.com/photo-1581094794329-c8112a89af12${UNSPLASH_PARAMS}`,
-    beforeAlt: 'Pęknięta rura wodociągowa przed naprawą',
-    afterAlt: 'Naprawiona rura wodociągowa',
+    before: image('1-before', 'Pęknięta rura wodociągowa przed naprawą'),
+    after: image('1-after', 'Naprawiona rura wodociągowa'),
     description: 'Błyskawiczna naprawa pękniętej rury w bloku mieszkalnym',
   },
   {
     id: 2,
     category: 'Łazienki',
     title: 'Remont łazienki - komplet',
-    beforeSrc: `https://images.unsplash.com/photo-1552321554-5fefe8c9ef14${UNSPLASH_PARAMS}`,
-    afterSrc: `https://images.unsplash.com/photo-1620626011761-996317b8d101${UNSPLASH_PARAMS}`,
-    beforeAlt: 'Stara łazienka przed remontem',
-    afterAlt: 'Nowa łazienka po remoncie',
+    before: image('2-before', 'Stara łazienka przed remontem'),
+    after: image('2-after', 'Nowa łazienka po remoncie'),
     description: 'Kompleksowy remont łazienki: kafelki, armatura, odpływy, oświetlenie',
   },
   {
     id: 3,
     category: 'Instalacje',
     title: 'Wymiana instalacji wodnej',
-    beforeSrc: `https://images.unsplash.com/photo-1585704032915-c3400ca199e7${UNSPLASH_PARAMS}`,
-    afterSrc: `https://images.unsplash.com/photo-1581092160562-40aa08e78837${UNSPLASH_PARAMS}`,
-    beforeAlt: 'Stara instalacja wodna',
-    afterAlt: 'Nowa instalacja wodna z PEX',
+    before: image('3-before', 'Stara instalacja wodna'),
+    after: image('3-after', 'Nowa instalacja wodna z PEX'),
     description: 'Wymiana całej instalacji wodnej na system PEX w 3-pokojowym mieszkaniu',
   },
   {
     id: 4,
     category: 'Ogrzewanie',
     title: 'Montaż ogrzewania podłogowego',
-    beforeSrc: `https://images.unsplash.com/photo-1604709177225-055f99402ea3${UNSPLASH_PARAMS}`,
-    afterSrc: `https://images.unsplash.com/photo-1571902943202-507ec2618e8f${UNSPLASH_PARAMS}`,
-    beforeAlt: 'Podłoga przed montażem ogrzewania',
-    afterAlt: 'Gotowa instalacja ogrzewania podłogowego',
+    before: image('4-before', 'Podłoga przed montażem ogrzewania'),
+    after: image('4-after', 'Gotowa instalacja ogrzewania podłogowego'),
     description: 'Montaż ogrzewania podłogowego wodnego na powierzchni 80m²',
   },
   {
     id: 5,
     category: 'Awarie',
     title: 'Udrożnienie kanalizacji',
-    beforeSrc: `https://images.unsplash.com/photo-1607472586893-edb57bdc0e39${UNSPLASH_PARAMS}`,
-    afterSrc: `https://images.unsplash.com/photo-1556911220-bff31c812dba${UNSPLASH_PARAMS}`,
-    beforeAlt: 'Zatkana kanalizacja',
-    afterAlt: 'Drożna kanalizacja po udrożnieniu',
+    before: image('5-before', 'Zatkana kanalizacja'),
+    after: image('5-after', 'Drożna kanalizacja po udrożnieniu'),
     description: 'Usunięcie uciążliwego zatoru metodą ciśnieniową',
   },
   {
     id: 6,
     category: 'Łazienki',
     title: 'Prysznic walk-in',
-    beforeSrc: `https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3${UNSPLASH_PARAMS}`,
-    afterSrc: `https://images.unsplash.com/photo-1600566752355-35792bedcfea${UNSPLASH_PARAMS}`,
-    beforeAlt: 'Stary prysznic z brodzikiem',
-    afterAlt: 'Nowoczesny prysznic walk-in',
+    before: image('6-before', 'Stary prysznic z brodzikiem'),
+    after: image('6-after', 'Nowoczesny prysznic walk-in'),
     description: 'Zamiana prysznica z brodzikiem na nowoczesny walk-in z odpływem liniowym',
   },
 ];
