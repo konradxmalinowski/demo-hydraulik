@@ -131,7 +131,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
     </section>
 
     <!-- @defer: Testimonials section -->
-    @defer (on viewport) {
+    @defer (hydrate on viewport) {
       <section class="py-20 px-4 bg-white dark:bg-gray-900">
         <div class="max-w-6xl mx-auto">
           <div class="text-center mb-12">
@@ -180,7 +180,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
     }
 
     <!-- @defer: Map/area section -->
-    @defer (on viewport) {
+    @defer (hydrate on viewport) {
       <section class="py-20 px-4 bg-gray-50 dark:bg-gray-950">
         <div class="max-w-6xl mx-auto">
           <div class="text-center mb-12">
@@ -236,7 +236,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
     }
 
     <!-- @defer: FAQ preview section -->
-    @defer (on viewport) {
+    @defer (hydrate on viewport) {
       <section class="py-20 px-4 bg-white dark:bg-gray-900">
         <div class="max-w-4xl mx-auto">
           <div class="text-center mb-12">
@@ -277,7 +277,7 @@ import { FAQ_ITEMS } from '../../data/faq.data';
     }
 
     <!-- @defer: Gallery preview -->
-    @defer (on viewport) {
+    @defer (hydrate on viewport) {
       <section class="py-20 px-4 bg-gray-50 dark:bg-gray-950">
         <div class="max-w-6xl mx-auto">
           <div class="text-center mb-12">

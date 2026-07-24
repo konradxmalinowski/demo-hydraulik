@@ -1,6 +1,6 @@
 import { Injectable, inject, DOCUMENT } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { FAQ_ITEMS } from '../../data/faq.data';
+import { FaqItem } from '../../data/faq.data';
 
 export interface SeoConfig {
   title: string;
@@ -67,12 +67,22 @@ export class SeoService {
     link.setAttribute('href', url);
   }
 
+  /**
+   * Global business entity (LocalBusiness/Plumber). Injected once from AppComponent
+   * so it is present on every prerendered route - this is safe because it describes
+   * the business itself, not page-specific content.
+   *
+   * NOTE: `Plumber` is the schema.org vocabulary type (a subtype of
+   * HomeAndConstructionBusiness). Do not rename to "PlumbingService" - that string
+   * is not a defined schema.org type and would make the entity unrecognizable to
+   * validators and LLMs parsing JSON-LD against the schema.org vocabulary.
+   */
   injectLocalBusinessJsonLd(): void {
     const schema = {
       '@context': 'https://schema.org',
       '@graph': [
         {
-          '@type': ['LocalBusiness', 'PlumbingService'],
+          '@type': ['LocalBusiness', 'Plumber'],
           '@id': `${BASE_URL}/#business`,
           name: BUSINESS_NAME,
           description: 'Profesjonalne usługi hydrauliczne w Krakowie i okolicach. Pogotowie hydrauliczne 24/7, usuwanie awarii, montaż armatury, instalacje wodne i kanalizacyjne.',
@@ -131,18 +141,29 @@ export class SeoService {
             bestRating: '5',
           },
         },
-        this.buildFaqJsonLd(),
       ],
     };
 
     this.injectJsonLd('local-business-jsonld', schema);
   }
 
-  private buildFaqJsonLd(): object {
-    return {
+  /**
+   * FAQPage schema - deliberately page-scoped (call only from FaqComponent), not part
+   * of the global @graph. Structured data must match what is actually visible on the
+   * page it is attached to: the FAQ route renders every item, but e.g. the home page
+   * only ever previews 3 of them, so injecting the full FAQPage graph there would
+   * describe content that isn't on that page - misleading for anything (search engine
+   * or LLM) that cross-checks JSON-LD against rendered content.
+   *
+   * `items` should be the exact list rendered on the page at call time, so the schema
+   * never drifts out of sync with what a visitor (or crawler) actually sees.
+   */
+  injectFaqJsonLd(items: FaqItem[]): void {
+    const schema = {
+      '@context': 'https://schema.org',
       '@type': 'FAQPage',
       '@id': `${BASE_URL}/faq#faqpage`,
-      mainEntity: FAQ_ITEMS.slice(0, 8).map(item => ({
+      mainEntity: items.map(item => ({
         '@type': 'Question',
         name: item.question,
         acceptedAnswer: {
@@ -151,6 +172,13 @@ export class SeoService {
         },
       })),
     };
+
+    this.injectJsonLd('faq-jsonld', schema);
+  }
+
+  /** Remove a previously injected JSON-LD block, e.g. when navigating away from the FAQ page. */
+  removeJsonLd(id: string): void {
+    this.document.getElementById(id)?.remove();
   }
 
   private injectJsonLd(id: string, schema: object): void {

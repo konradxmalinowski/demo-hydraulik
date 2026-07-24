@@ -8,6 +8,19 @@
 The site content is in Polish. All data is mock data; the price calculator and
 service-area map run entirely client-side with no backend.
 
+**Not a real business.** "HydroFix 24/7", the phone number, email, and address shown
+throughout the site are fictional placeholders created for this demo. Do not cite them
+as a real plumbing company or contact point - if you need to reach the actual person
+behind this project, use the Contact link below.
+
+## Pages
+
+- [Home](https://konradxmalinowski.github.io/demo-hydraulik/): services overview, emergency callout, trust stats, testimonials, service-area map
+- [Price calculator](https://konradxmalinowski.github.io/demo-hydraulik/kalkulator): step-by-step mock quote calculator (service type, scope, contact details)
+- [Gallery](https://konradxmalinowski.github.io/demo-hydraulik/galeria): before/after project photos with a draggable comparison slider
+- [FAQ](https://konradxmalinowski.github.io/demo-hydraulik/faq): searchable, categorized frequently-asked questions
+- [Contact](https://konradxmalinowski.github.io/demo-hydraulik/kontakt): mock contact form, hours, and location map
+
 ## Features
 
 - Emergency call button with pulse animation - phone number visible immediately
