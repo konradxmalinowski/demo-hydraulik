@@ -147,6 +147,10 @@ export class FaqComponent implements OnInit, OnDestroy {
       url: '/faq',
     });
 
+    // FAQPage JSON-LD for the full, unfiltered list of questions - this must match
+    // every question rendered on this route, not the "Wszystkie" filtered subset.
+    this.seoService.injectFaqJsonLd(this.allItems);
+
     // Bridge FormControl changes into the Signal so computed() reacts
     this.searchSub = this.searchControl.valueChanges.subscribe(val => {
       this.searchQuery.set(val ?? '');
@@ -155,6 +159,9 @@ export class FaqComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.searchSub?.unsubscribe();
+    // Client-side navigation away from /faq must not leave a stale FAQPage schema
+    // describing a page the visitor is no longer on.
+    this.seoService.removeJsonLd('faq-jsonld');
   }
 
   setCategory(cat: FaqCategory | null): void {

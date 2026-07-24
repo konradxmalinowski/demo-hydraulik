@@ -27,7 +27,13 @@ type Step = 1 | 2 | 3;
         </div>
 
         <!-- Step progress -->
-        <div class="flex items-center justify-center gap-2 mb-10" aria-label="Postęp formularza">
+        <div class="flex items-center justify-center gap-2 mb-10"
+             role="progressbar"
+             aria-label="Postęp formularza"
+             [attr.aria-valuemin]="1"
+             [attr.aria-valuemax]="3"
+             [attr.aria-valuenow]="step()"
+             [attr.aria-valuetext]="'Krok ' + step() + ' z 3'">
           @for (s of [1, 2, 3]; track s) {
             <div class="flex items-center gap-2">
               <div class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-colors" [class.bg-hydraulik-navy]="step() >= s" [class.text-white]="step() >= s" [class.bg-gray-200]="step() < s" [class.text-gray-500]="step() < s">
@@ -50,9 +56,9 @@ type Step = 1 | 2 | 3;
                 <h2 class="text-2xl font-bold mb-2">Krok 1: Rodzaj usługi</h2>
                 <p class="text-gray-500 dark:text-gray-400 mb-6">Wybierz typ prac do wykonania</p>
 
-                <div class="grid grid-cols-2 gap-3 mb-6">
+                <div class="grid grid-cols-2 gap-3 mb-6" role="radiogroup" aria-label="Rodzaj usługi">
                   @for (opt of serviceOptions; track opt.value) {
-                    <button (click)="setServiceType(opt.value)" class="flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all text-left" [class.border-hydraulik-steel]="calc.serviceType() === opt.value" [class.bg-blue-50]="calc.serviceType() === opt.value" [class.text-hydraulik-navy]="calc.serviceType() === opt.value" [class.border-gray-400]="calc.serviceType() !== opt.value" [class.dark:border-gray-200]="calc.serviceType() !== opt.value" [attr.aria-pressed]="calc.serviceType() === opt.value">
+                    <button (click)="setServiceType(opt.value)" type="button" role="radio" class="flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all text-left" [class.border-hydraulik-steel]="calc.serviceType() === opt.value" [class.bg-blue-50]="calc.serviceType() === opt.value" [class.text-hydraulik-navy]="calc.serviceType() === opt.value" [class.border-gray-400]="calc.serviceType() !== opt.value" [class.dark:border-gray-200]="calc.serviceType() !== opt.value" [attr.aria-checked]="calc.serviceType() === opt.value">
                       <span class="font-semibold text-sm">{{ opt.label }}</span>
                     </button>
                   }
