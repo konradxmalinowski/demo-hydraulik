@@ -58,7 +58,7 @@ type Step = 1 | 2 | 3;
 
                 <div class="grid grid-cols-2 gap-3 mb-6" role="radiogroup" aria-label="Rodzaj usługi">
                   @for (opt of serviceOptions; track opt.value) {
-                    <button (click)="setServiceType(opt.value)" type="button" role="radio" class="flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all text-left" [class.border-hydraulik-steel]="calc.serviceType() === opt.value" [class.bg-blue-50]="calc.serviceType() === opt.value" [class.text-hydraulik-navy]="calc.serviceType() === opt.value" [class.border-gray-400]="calc.serviceType() !== opt.value" [class.dark:border-gray-200]="calc.serviceType() !== opt.value" [attr.aria-checked]="calc.serviceType() === opt.value">
+                    <button (click)="setServiceType(opt.value)" type="button" role="radio" class="flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all text-left" [class.border-hydraulik-steel]="calc.serviceType() === opt.value" [class.bg-hydraulik-steel]="calc.serviceType() === opt.value" [class.bg-opacity-10]="calc.serviceType() === opt.value" [class.text-hydraulik-navy]="calc.serviceType() === opt.value" [class.dark:text-hydraulik-steel]="calc.serviceType() === opt.value" [class.border-gray-400]="calc.serviceType() !== opt.value" [class.dark:border-gray-200]="calc.serviceType() !== opt.value" [attr.aria-checked]="calc.serviceType() === opt.value">
                       <span class="font-semibold text-sm">{{ opt.label }}</span>
                     </button>
                   }
@@ -90,9 +90,9 @@ type Step = 1 | 2 | 3;
                 <!-- Hours slider -->
                 <div class="mb-6">
                   <label class="block text-sm font-medium mb-2" for="hours-slider">
-                    Szacowany czas pracy: <span class="text-blue-500 font-bold">{{ calc.hoursCount() }} godz.</span>
+                    Szacowany czas pracy: <span class="text-hydraulik-navy dark:text-hydraulik-steel font-bold">{{ calc.hoursCount() }} godz.</span>
                   </label>
-                  <input id="hours-slider" type="range" min="1" max="8" step="1" [value]="calc.hoursCount()" (input)="setHours($event)" class="w-full accent-blue-500" />
+                  <input id="hours-slider" type="range" min="1" max="8" step="1" [value]="calc.hoursCount()" (input)="setHours($event)" class="w-full accent-hydraulik-steel" />
                   <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
                     <span>1h</span><span>4h</span><span>8h</span>
                   </div>
@@ -129,14 +129,14 @@ type Step = 1 | 2 | 3;
                 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
                   <div>
                     <label class="block text-sm font-medium mb-1" for="calc-name">Imię *</label>
-                    <input id="calc-name" formControlName="name" type="text" class="w-full border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Jan" />
+                    <input id="calc-name" formControlName="name" type="text" class="w-full border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-hydraulik-steel" placeholder="Jan" />
                     @if (contactForm.get('name')?.invalid && contactForm.get('name')?.touched) {
                       <p class="text-red-500 text-xs mt-1">Imię jest wymagane</p>
                     }
                   </div>
                   <div>
                     <label class="block text-sm font-medium mb-1" for="calc-phone">Telefon *</label>
-                    <input id="calc-phone" formControlName="phone" type="tel" class="w-full border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="+48 xxx xxx xxx" />
+                    <input id="calc-phone" formControlName="phone" type="tel" class="w-full border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-hydraulik-steel" placeholder="+48 xxx xxx xxx" />
                     @if (contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched) {
                       <p class="text-red-500 text-xs mt-1">Podaj prawidłowy numer telefonu</p>
                     }
@@ -163,7 +163,7 @@ type Step = 1 | 2 | 3;
               @for (row of priceRows(); track row.label) {
                 <div class="flex items-center justify-between py-3 border-b border-gray-200 dark:border-gray-700/50 last:border-0">
                   <span class="text-gray-600 dark:text-gray-400 text-sm">{{ row.label }}</span>
-                  <span class="text-xl font-bold tabular-nums text-green-700 dark:text-green-400">{{ row.value }} zł</span>
+                  <span class="text-xl font-bold tabular-nums text-hydraulik-navy dark:text-hydraulik-steel">{{ row.value }} zł</span>
                 </div>
               }
             </div>
@@ -171,14 +171,14 @@ type Step = 1 | 2 | 3;
             <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-600">
               <div class="flex items-center justify-between">
                 <span class="text-gray-700 dark:text-gray-300 font-semibold text-lg">RAZEM</span>
-                <span class="text-3xl font-bold text-blue-700 dark:text-blue-400 tabular-nums">{{ calc.razem() }} zł</span>
+                <span class="text-3xl font-bold text-hydraulik-navy dark:text-hydraulik-steel tabular-nums">{{ calc.razem() }} zł</span>
               </div>
               <p class="text-gray-500 text-xs mt-2 text-center">* Wycena orientacyjna. Ostateczna cena po oględzinach.</p>
             </div>
 
             <div class="mt-4 text-center">
               <span class="inline-flex items-center gap-2 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full text-xs text-gray-700 dark:text-gray-300">
-                <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                <span class="w-2 h-2 rounded-full bg-hydraulik-steel animate-pulse"></span>
                 {{ currentServiceLabel() }}
               </span>
             </div>
