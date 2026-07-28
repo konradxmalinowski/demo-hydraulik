@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-07-28
+
+### Fixed
+- Kalkulator Wyceny: replaced ad-hoc Tailwind blue/green colors with the app's actual `hydraulik-navy`/`hydraulik-steel` brand tokens throughout - selected service card, hours slider, form focus rings, price rows, total, and status indicator.
+- Missing `dark:` text-color variant on the selected service card, which caused a contrast bug in dark mode.
+
 ## [0.1.0] - 2026-07-24
 
 ### Added
@@ -19,5 +25,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ARIA roles/attributes on the price calculator (radiogroup for step options, progressbar for step progress) for screen readers and browser-using agents.
 - Deduplicated `robots.txt` and `sitemap.xml`, which previously existed in both `src/` and `public/` with diverging content; both now live only in `public/`.
 
-[Unreleased]: https://github.com/konradxmalinowski/demo-hydraulik/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/konradxmalinowski/demo-hydraulik/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/konradxmalinowski/demo-hydraulik/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/konradxmalinowski/demo-hydraulik/releases/tag/v0.1.0
